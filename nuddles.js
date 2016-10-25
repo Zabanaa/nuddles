@@ -1,16 +1,21 @@
 const Nuddles = function (credentials) {
-    if (typeof credentials !== "object") {
-        throw new Error("You have to pass an object")
+
+    if (typeof credentials === "object") {
+        
+        if (!credentials.clientId || !credentials.clientSecret){
+            throw new Error("Missing required fields. Please refer to the documentation.")
+        } 
+
+        this.clientId       = credentials.clientId
+        this.clientSecret   = credentials.clientSecret
+        this.url = "http://api.foursquare.com"
+        this.version = "20161024"
+
     }
 
-    if (!credentials.clientId || !credentials.clientSecret){
-        throw new Error("Missing required fields. Please refer to the documentation.")
-    } 
-
-    this.clientId       = credentials.clientId
-    this.clientSecret   = credentials.clientSecret
-    this.url = "http://api.foursquare.com"
-    this.version = "20161024"
+    else {
+        throw new Error("You have to pass an object")
+    }
 
 } 
 
