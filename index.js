@@ -6,4 +6,3 @@ const nuddles = new Nuddles({
 })
 
 console.log(nuddles)
-nuddles.shout()
