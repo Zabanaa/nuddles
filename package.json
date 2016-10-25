@@ -1,0 +1,23 @@
+{
+  "name": "hendadda",
+  "version": "1.0.0",
+  "description": "Node.js wrapper around the foursquare API",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zabanaa/npm-foursquare.git"
+  },
+  "author": "Karim Cheurfi <karim.cheurfi@gmail.com> (Zabana)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zabanaa/npm-foursquare/issues"
+  },
+  "homepage": "https://github.com/Zabanaa/npm-foursquare#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  }
+}
