@@ -8,9 +8,6 @@ const Nuddles = function (credentials) {
 
         this.clientId       = credentials.clientId
         this.clientSecret   = credentials.clientSecret
-        this.url = "http://api.foursquare.com"
-        this.version = "20161024"
-
     }
 
     else {
@@ -20,8 +17,17 @@ const Nuddles = function (credentials) {
 } 
 
 Nuddles.prototype.callApi = (queryParams) => {
+    
+    const apiVersion = "20161025"
 
-    // Loop through the query params 
+    let options = {
+        'host': 'api.foursquare.com',
+        'method': 'GET',
+        'port': 443,
+        // Loop through the query params and create a path string
+        // lookup how to add query params
+    }
+
     // make the call to the API
 }
 
