@@ -1,7 +1,9 @@
-const Nuddles = function (credentials) {
+const xhr     = require('xhr')
+const helpers = require('./helpers')
+
+const Nuddles = function(credentials) {
 
     if (typeof credentials === "object") {
-        
         if (!credentials.clientId || !credentials.clientSecret){
             throw new Error("Missing required fields. Please refer to the documentation.")
         } 
@@ -13,22 +15,22 @@ const Nuddles = function (credentials) {
     else {
         throw new Error("You have to pass an object")
     }
-
 } 
 
-Nuddles.prototype.callApi = (queryParams) => {
+Nuddles.prototype.callApi = function (path, queryParams) {
     
-    const apiVersion = "20161025"
+    const root = "https://api.foursquare.com/v2"
+    const queryString = helpers.urlSerialise(queryParams)
 
     let options = {
-        'host': 'api.foursquare.com',
+        'url': `${root}/${path}?${queryString}&client_id=${this.clientId}&client_secret=${this.clientSecret}`,
         'method': 'GET',
-        'port': 443,
-        // Loop through the query params and create a path string
-        // lookup how to add query params
+        'encoding': undefined,
+        'headers': {
+            'Content-Type': 'application/json'
+        }
     }
-
-    // make the call to the API
+    return helpers.makeRequest(options)
 }
 
 module.exports = Nuddles 
