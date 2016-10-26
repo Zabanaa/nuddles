@@ -2,7 +2,7 @@ let objectRequired = () => {
     throw new Error("An object must be passed")
 }
 
-let serialiseParams = (queryParams) => {
+let urlSerialise = (queryParams) => {
     
     let queryString = [] 
 
@@ -16,7 +16,7 @@ let serialiseParams = (queryParams) => {
 }
 
 module.exports = {
-    serialise: serialiseParams,
+    urlSerialise: urlSerialise,
     objectRequired: objectRequired
 }
 
