@@ -1,8 +1,7 @@
-const Nuddles = require('./nuddles')
+const Nuddles       = require('./nuddles')
+const credentials   = require('./credentials')
 
 const nuddles = new Nuddles({
-    clientId: "my_id", 
-    clientSecret: "my_client_secret"
+    clientId: credentials.clientId, 
+    clientSecret: credentials.clientSecret 
 })
-
-console.log(nuddles)
