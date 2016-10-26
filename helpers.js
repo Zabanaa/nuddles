@@ -1,8 +1,10 @@
-let objectRequired = () => {
+const nets = require('nets')
+
+const objectRequired = () => {
     throw new Error("An object must be passed")
 }
 
-let urlSerialise = (queryParams) => {
+const urlSerialise = (queryParams) => {
     
     let queryString = [] 
 
@@ -15,8 +17,30 @@ let urlSerialise = (queryParams) => {
     return queryString.join('&')
 }
 
+const makeRequest = (options) => {
+   
+    return new Promise( (resolve, reject) => {
+       
+        nets(options, (err, response, body) => {
+
+            if (response.statusCode >= 200 && response.statusCode <= 299) {
+                
+                resolve(JSON.parse(body))
+
+            } else {
+                
+                reject("Error! The server responded with a status code of " + response.statusCode + " and sent the following message: " + response.statusMessage)
+
+            }
+
+        })
+    })
+}
+
 module.exports = {
     urlSerialise: urlSerialise,
-    objectRequired: objectRequired
+    objectRequired: objectRequired,
+    makeRequest: makeRequest
+
 }
 
