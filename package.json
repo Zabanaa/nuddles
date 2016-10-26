@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Zabanaa/npm-foursquare#readme",
   "devDependencies": {
     "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "mocha": "^3.1.2"
   },
   "dependencies": {
