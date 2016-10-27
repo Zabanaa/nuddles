@@ -1,11 +1,13 @@
 const nets = require('nets')
 
-const objectRequired = () => {
-    throw new Error("An object must be passed")
+const checkIsObject = (arg) => {
+    if (typeof arg !== "object"){
+        throw new Error("An object must be passed")
+    }
 }
 
 const urlSerialise = (queryParams) => {
-    
+
     let queryString = [] 
 
     for(let key in queryParams) {
@@ -39,7 +41,7 @@ const makeRequest = (options) => {
 
 module.exports = {
     urlSerialise: urlSerialise,
-    objectRequired: objectRequired,
+    checkIsObject: checkIsObject,
     makeRequest: makeRequest
 
 }
