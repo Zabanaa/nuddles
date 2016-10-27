@@ -7,6 +7,8 @@ const checkIsObject = (arg) => {
 }
 
 const urlSerialise = (queryParams) => {
+    
+    checkIsObject(queryParams) 
 
     let queryString = [] 
 
