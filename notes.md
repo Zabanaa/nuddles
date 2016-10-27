@@ -6,9 +6,6 @@
   accuracy, ne, sw, categoryId, url, providerId, linkedId)
 
 - /v2/venues/categories (No params)
-
-- /v2/venues/timeseries (venueId, startAt, endAt, fields __one or more of totalCheckins,
-  newCheckins, uniqueVisitors, sharing, genders, ages, hours (separated by commais)__)
   
 - /v2/venues/trending ( ll, limit, radius) 
 
@@ -39,8 +36,10 @@ Here's a list of all the methods we will create
     Nuddles.getVenueCategories()
     Nuddles.getTrendingVenues()
     Nuddles.exploreVenues()
+    Nuddles.getListDetails(listId)
+    Nuddles.getSpecialById(specialId)
+    Nuddles.getEventDetails(eventId)
 ```
-
 
 # Aspects Methods (that pertain to a single venue)
 For this to work we will need to create a new Venue constructor that inherits from the
