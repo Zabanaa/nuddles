@@ -25,6 +25,4 @@ describe('Serialise Query Parameters Object', () => {
     it('throws an error if no object is passed', () => {
         assert.throws( function(){ helpers.urlSerialise("kejre") }, Error)
     })
-
-
 })
