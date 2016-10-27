@@ -1,22 +1,24 @@
 const chai      = require('chai')
 const chaiHttp  = require('chai-http')
 const assert    = chai.assert
+const helpers   = require('../helpers')
 
-// test object required
 describe('Object required', () => {
-   
-    // test with an object
-    // test without an object 
+    
+    it('throws an error if the argument passed is not an object', () => {
+        assert.throws( function(){helpers.objectRequired('hello')}, Error, "An object must be passed")
+    })
 
+    it('does not throw an error if the argument passed is an object', () => {
+        assert.doesNotThrow( function(){ helpers.objectRequired({name: "karim", city: "paris"})}, Error)
+    })
 })
 
-// test urlSerialise 
 describe('Serialise Query Parameters Object', () => {
-    // test that it works
-    // test that it fails if no object is passed
+    // assertEqual
+    // assertThrows if no object is passed 
 })
 
-// test makeRequest
 describe('Make calls to API', () => {
 
 
