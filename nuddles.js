@@ -2,19 +2,14 @@ const xhr     = require('xhr')
 const helpers = require('./helpers')
 
 const Nuddles = function(credentials) {
+    
+    helpers.checkIsObject(credentials)
 
-    if (typeof credentials === "object") {
-        if (!credentials.clientId || !credentials.clientSecret){
-            throw new Error("Missing required fields. Please refer to the documentation.")
-        } 
+    if (!credentials.clientId || !credentials.clientSecret)
+        throw new Error("Missing required fields. Please refer to the documentation.")
 
-        this.clientId       = credentials.clientId
-        this.clientSecret   = credentials.clientSecret
-    }
-
-    else {
-        throw new Error("You have to pass an object")
-    }
+    this.clientId       = credentials.clientId
+    this.clientSecret   = credentials.clientSecret
 } 
 
 Nuddles.prototype.callApi = function (path, queryParams) {
