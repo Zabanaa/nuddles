@@ -28,5 +28,9 @@ Nuddles.prototype.callApi = function (path, queryParams) {
     return helpers.makeRequest(options)
 }
 
+Nuddles.prototype.searchVenues = function(params) {
+    return this.callApi('/venues/search', params)
+}
+
 module.exports = Nuddles
 
