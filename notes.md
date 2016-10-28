@@ -31,7 +31,7 @@ The class is able to make calls to the api thanks to this helper function
 Here's a list of all the methods we will create
 ```javascript
     Nuddles.searchVenues(params) !DONE!
-    Nuddles.getVenueByID(id)
+    Nuddles.getVenueDetail(id) !DONE!
     Nuddles.getVenueCategories()
     Nuddles.getTrendingVenues()
     Nuddles.exploreVenues()
