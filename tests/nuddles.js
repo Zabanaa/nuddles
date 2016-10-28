@@ -23,4 +23,20 @@ describe('Test prototype methods work', (done) => {
         })
 
     })
+
+    it('returns all the details for a specific venue given an ID', () => {
+        let venueId      = '4adcda0af964a520623421e3'
+        let venueDetails = nuddles.getVenueDetail(venueId)
+
+        return venueDetails.then( (data) => {
+            let response = data.response
+            assert.equal(200, data.meta.code)
+            assert.property(response, 'venue')
+            assert.isObject(response.venue, "venue is indeed of type object")
+        })
+
+    })
+
+
+
 })
