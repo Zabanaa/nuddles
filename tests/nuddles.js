@@ -37,6 +37,13 @@ describe('Test prototype methods work', (done) => {
 
     })
 
-
+    it('returns a 400 if the provided venueID is invalid', () => {
+        let venueId = "invalididbruv"
+        let venueDetails = nuddles.getVenueDetail(venueId)
+        return venueDetails.catch( (errorMsg) => {
+            assert.include(errorMsg, '400')
+            assert.include(errorMsg, venueId + ' is invalid for venue id')
+        })
+    })
 
 })
