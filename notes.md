@@ -1,4 +1,4 @@
-# Endpoints 
+# Endpoints
 
 - /v2/venues/VENUE_ID (returns details about the venue)
 
@@ -6,8 +6,8 @@
   accuracy, ne, sw, categoryId, url, providerId, linkedId)
 
 - /v2/venues/categories (No params)
-  
-- /v2/venues/trending ( ll, limit, radius) 
+
+- /v2/venues/trending ( ll, limit, radius)
 
 - /v2/venues/explore (ll, location, llAcc, alttitude, altitudeAcc, radius, section, query,
   limit, offset, section (section invalidates the query if it's passed, there are tons of
@@ -29,9 +29,8 @@ The class is able to make calls to the api thanks to this helper function
 ```
 
 Here's a list of all the methods we will create
-
-```javascript 
-    Nuddles.searchVenues(params)
+```javascript
+    Nuddles.searchVenues(params) !DONE!
     Nuddles.getVenueByID(id)
     Nuddles.getVenueCategories()
     Nuddles.getTrendingVenues()
@@ -43,21 +42,21 @@ Here's a list of all the methods we will create
 
 # Aspects Methods (that pertain to a single venue)
 For this to work we will need to create a new Venue constructor that inherits from the
-base class. It will have the same clientId and Secret. 
+base class. It will have the same clientId and Secret.
 And also a shared method for calling the api
 
 Here's a list of all the aspect methods we will create (limited to userless action)
 
-- The Venue constructor will take an id 
+- The Venue constructor will take an id
 - Venue.getPhotos()
 - Venue.getEvents()
 - Venue.getLikes()
 - Venue.getNextVenues()
 - Venue.getOpeningHours()
 - Venue.getThirdPartyLinks()
-- Venue.getMenu() 
+- Venue.getMenu()
 - Venue.getTips()
-- Venue.getLists() 
+- Venue.getLists()
 
 ## Todo
 
