@@ -32,5 +32,10 @@ Nuddles.prototype.searchVenues = function(params) {
     return this.callApi('/venues/search', params)
 }
 
+Nuddles.prototype.getVenueDetail = function(venueId) {
+    let path = '/venues/' + venueId
+    return this.callApi(path, {})
+}
+
 module.exports = Nuddles
 
