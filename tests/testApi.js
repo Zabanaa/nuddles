@@ -30,10 +30,26 @@ describe("Calls to the API actually work", (done) => {
 
         let invalidCall    = nuddles.callApi('/someendpoint', {})
         return invalidCall.catch( (errorMsg) => {
-            assert.include(errorMsg, "Not Found")
+            assert.include(errorMsg, "Endpoint not found")
             assert.include(errorMsg, "404")
         })
     })
+
+    it('returns a 400 bad request if invalid credentials are passed', () => {
+
+        const nuddles = new Nuddles({
+            clientId: "bruvvv",
+            clientSecret: "secretsaucebitch"
+        })
+
+        let categories = nuddles.callApi('/venues/categories', {})
+        return categories.catch( (errorMsg) => {
+            assert.include(errorMsg, "Missing access credentials.")
+            assert.include(errorMsg, "400")
+        })
+
+    })
+
 })
 
 
