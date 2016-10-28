@@ -1,4 +1,3 @@
-const xhr     = require('xhr')
 const helpers = require('./helpers')
 
 const Nuddles = function(credentials) {
