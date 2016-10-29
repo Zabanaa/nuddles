@@ -4,7 +4,7 @@
   "description": "Node.js wrapper around the foursquare API",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha tests/*.js"
+    "test": "./node_modules/mocha/bin/mocha --timeout 15000 tests/*.js"
   },
   "repository": {
     "type": "git",
