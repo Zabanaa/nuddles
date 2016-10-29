@@ -16,6 +16,10 @@ Nuddles.prototype.callApi = function (path, queryParams) {
     const root = "https://api.foursquare.com/v2"
     const queryString = helpers.urlSerialise(queryParams)
 
+    if (queryParams) {
+        helpers.checkIsObject(queryParams)
+    }
+
     let options = {
         'url': root + path + "?" + queryString + "&client_id=" + this.clientId + "&client_secret=" + this.clientSecret,
         'method': 'GET',
@@ -33,7 +37,7 @@ Nuddles.prototype.searchVenues = function(params) {
 
 Nuddles.prototype.getVenueDetail = function(venueId) {
     let path = '/venues/' + venueId
-    return this.callApi(path, {})
+    return this.callApi(path)
 }
 
 module.exports = Nuddles
