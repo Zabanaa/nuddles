@@ -66,3 +66,31 @@ describe(' Test Nuddles.getVenueCategories', (done) => {
 
 })
 
+describe('Test Nuddles.getTrendingVenues', (done) => {
+
+    it('returns a list of trending venues', () => {
+
+        let params          = {near: 'Paris, France', limit: 3, radius: 2000}
+        let trendingVenues  = nuddles.getTrendingVenues(params)
+        return trendingVenues.then( (data) => {
+            let response = data.response
+            assert.equal(200, data.meta.code)
+            assert.property(response, 'venues')
+            assert.isArray(response.venues)
+            assert.equal(3, response.venues.length)
+            assert.include(response.geocode.where, 'paris france')
+        })
+    })
+
+    it('returns a 400 if no location parameter is passed', () => {
+
+        let params          = {limit: 3, radius: 1700}
+        let trendingVenues  = nuddles.getTrendingVenues()
+
+        return trendingVenues.catch( (errorMsg) => {
+            assert.include(errorMsg, '400')
+            assert.include(errorMsg, 'Must provide parameter ll or userll or near')
+        })
+    })
+})
+
