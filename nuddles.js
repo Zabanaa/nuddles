@@ -28,6 +28,7 @@ Nuddles.prototype.callApi = function (path, queryParams) {
             'Content-Type': 'application/json'
         }
     }
+
     return helpers.makeRequest(options)
 }
 
@@ -39,6 +40,11 @@ Nuddles.prototype.getVenueDetail = function(venueId) {
     let path = '/venues/' + venueId
     return this.callApi(path)
 }
+
+Nuddles.prototype.getVenueCategories = function() {
+    return this.callApi('/venues/categories')
+}
+
 
 module.exports = Nuddles
 
