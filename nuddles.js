@@ -49,5 +49,8 @@ Nuddles.prototype.getTrendingVenues = function(params) {
     return this.callApi('/venues/trending', params)
 }
 
+Nuddles.prototype.exploreVenues = function(params) {
+    return this.callApi('/venues/explore', params)
+}
 module.exports = Nuddles
 
