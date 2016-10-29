@@ -8,7 +8,7 @@ const nuddles       = new Nuddles({
     clientSecret: credentials.clientSecret
 })
 
-describe('Test prototype methods work', (done) => {
+describe('Test Nuddles.searchVenues', (done) => {
 
     it('searches venues and returns results based on location',() => {
 
@@ -51,5 +51,18 @@ describe('Test Nuddles.getVenueDetail', (done) => {
 
 })
 
+describe(' Test Nuddles.getVenueCategories', (done) => {
 
+    it('returns a list of all categories', () => {
+        let venueCategories = nuddles.getVenueCategories()
+        return venueCategories.then( (data) => {
+            let response = data.response
+            assert.equal(200, data.meta.code)
+            assert.property(response, 'categories')
+            assert.isArray(response.categories)
+            assert.isAtLeast(response.categories.length, 1)
+        })
+    })
+
+})
 
