@@ -33,9 +33,8 @@ Here's a list of all the methods we will create
     Nuddles.searchVenues(params) !DONE!
     Nuddles.getVenueDetail(id) !DONE!
     Nuddles.getVenueCategories() !DONE!
-    Nuddles.getTrendingVenues(ll OR near OR userll, limit (defaults to 10), radius
-    (defaults to 10g)) !DONE!
-    Nuddles.exploreVenues()
+    Nuddles.getTrendingVenues(ll OR Near) !DONE! // Required ll OR near Optional limit and radius
+    Nuddles.exploreVenues(ll OR near) !DONE! // Required ll OR near Optional (see the docs) on the site
     Nuddles.getListDetails(listId)
     Nuddles.getSpecialById(specialId)
     Nuddles.getEventDetails(eventId)
