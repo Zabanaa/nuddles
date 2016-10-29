@@ -85,7 +85,7 @@ describe('Test Nuddles.getTrendingVenues', (done) => {
     it('returns a 400 if no location parameter is passed', () => {
 
         let params          = {limit: 3, radius: 1700}
-        let trendingVenues  = nuddles.getTrendingVenues()
+        let trendingVenues  = nuddles.getTrendingVenues(params)
 
         return trendingVenues.catch( (errorMsg) => {
             assert.include(errorMsg, '400')
@@ -93,4 +93,40 @@ describe('Test Nuddles.getTrendingVenues', (done) => {
         })
     })
 })
+
+describe('Test Nuddles.exploreVenues', () => {
+
+    it('returns one or more groups of recommendations', () => {
+
+        let params          = {near: 'Paris, France', limit: 3, radius: 1700}
+        let recommendations = nuddles.exploreVenues(params)
+
+        return recommendations.then( (data) => {
+            let response = data.response
+            assert.equal(200, data.meta.code)
+            assert.equal(params.near, response.geocode.displayString)
+        })
+    })
+
+    it('returns a 400 if no location attribute is passed', () => {
+
+        let params          = {limit: 3}
+        let recommendations = nuddles.exploreVenues(params)
+
+        return recommendations.catch( (errorMsg) => {
+            assert.include(errorMsg, 400)
+            assert.include(errorMsg,'Must provide parameters (ll and radius) or (sw and ne) or (near and radius) or (nearVenueId and ll) or (superVenueId) or (polygon)')
+
+        })
+
+    })
+
+})
+
+
+
+
+
+
+
 
