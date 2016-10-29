@@ -32,8 +32,8 @@ Here's a list of all the methods we will create
 ```javascript
     Nuddles.searchVenues(params) !DONE!
     Nuddles.getVenueDetail(id) !DONE!
-    Nuddles.getVenueCategories()
-    Nuddles.getTrendingVenues()
+    Nuddles.getVenueCategories() !DONE!
+    Nuddles.getTrendingVenues(ll OR near OR userll)
     Nuddles.exploreVenues()
     Nuddles.getListDetails(listId)
     Nuddles.getSpecialById(specialId)
