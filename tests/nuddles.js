@@ -24,6 +24,10 @@ describe('Test prototype methods work', (done) => {
 
     })
 
+})
+
+describe('Test Nuddles.getVenueDetail', (done) => {
+
     it('returns all the details for a specific venue given an ID', () => {
         let venueId      = '4adcda0af964a520623421e3'
         let venueDetails = nuddles.getVenueDetail(venueId)
@@ -34,7 +38,6 @@ describe('Test prototype methods work', (done) => {
             assert.property(response, 'venue')
             assert.isObject(response.venue, "venue is indeed of type object")
         })
-
     })
 
     it('returns a 400 if the provided venueID is invalid', () => {
@@ -47,3 +50,6 @@ describe('Test prototype methods work', (done) => {
     })
 
 })
+
+
+
