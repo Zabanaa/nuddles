@@ -36,6 +36,10 @@ Nuddles.prototype.searchVenues = function(params) {
     return this.callApi('/venues/search', params)
 }
 
+Nuddles.prototype.suggestCompletion = function(params) {
+    return this.callApi('/venues/suggestCompletion', params)
+}
+
 Nuddles.prototype.getVenueDetail = function(venueId) {
     let path = '/venues/' + venueId
     return this.callApi(path)
@@ -52,5 +56,6 @@ Nuddles.prototype.getTrendingVenues = function(params) {
 Nuddles.prototype.exploreVenues = function(params) {
     return this.callApi('/venues/explore', params)
 }
+
 module.exports = Nuddles
 
