@@ -123,10 +123,41 @@ describe('Test Nuddles.exploreVenues', () => {
 
 })
 
+describe('Test Nuddles.suggestCompletion', () => {
 
+    let params      = {near: 'Paris, France', query: 'Pizz'}
 
+    it('Returns a list of mini venues based on a search query', () => {
 
+        let minivenues  = nuddles.suggestCompletion(params)
 
+        return minivenues.then( (data) => {
+            let response = data.response
+            assert.equal(200, data.meta.code)
+            assert.property(response, 'minivenues')
+            assert.isArray(response.minivenues)
+        })
+    })
 
+    it('Returns a 400 when missing query or location parameters', () => {
+        delete params.query
 
+        let minivenues = nuddles.suggestCompletion(params)
 
+        return minivenues.catch( (errorMsg) => {
+
+            assert.include(errorMsg, '400')
+            assert.include(errorMsg, 'Must provide parameter query')
+        })
+    })
+
+    it('Returns an empty array when passed an unknown query parameter', () => {
+
+        params.query = "whfwhfw"
+        let minivenues = nuddles.suggestCompletion(params)
+        return minivenues.then( (data) => {
+            let response = data.response
+            assert.equal(0, response.minivenues.length)
+        })
+    })
+})
