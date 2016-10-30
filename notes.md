@@ -58,16 +58,64 @@ Here's a list of all the aspect methods we will create (limited to userless acti
 
 ## Todo
 
+**Nuddles**
+
+    Link to docs: https://developer.foursquare.com/docs/specials/
+
+    - [  ] Nuddles.searchSpecials(params)
+    - [  ] Nuddles.getSpecialDetails(specialId)
+
+    Link to docs: https://developer.foursquare.com/docs/events/events
+
+    - [  ] Nuddles.searchEvents(params)
+    - [  ] Nuddles.getEventCategories()
+
 **Venues (required acting user)**
 
-- [  ] Nuddles.getDailyVenueStats() `/venues/timeseries`    (must be the manager)
-- [  ] Nuddles.managedVenues()      `/venues/managed`       (must be the manager)
-- [  ] Nuddles.addVenue()           `/venues/add`
+    - [  ] Nuddles.getDailyVenueStats() `/venues/timeseries`    (must be the manager)
+    - [  ] Nuddles.managedVenues()      `/venues/managed`       (must be the manager)
+    - [  ] Nuddles.addVenue()           `/venues/add`
 
 **Individual venue (requires acting user)**
 
-- [  ] Venue.getSimilar() `/venues/VENUE_ID/similar`
-- [  ] Venue.getStats()   `/venues/VENUE_ID/stats` (must be the manager)
+    - [  ] Venue.getSimilar() `/venues/VENUE_ID/similar`
+    - [  ] Venue.getStats()   `/venues/VENUE_ID/stats` (must be the manager)
+
+**Lists**
+
+    Create a List Class
+    Link to docs: https://developer.foursquare.com/docs/lists/lists
+
+    - [  ] List.getDetails()
+    - [  ] List.getFollowers()
+    - [  ] List.getSaves()
+
+    _requires acting user_
+    - [  ] List.suggestVenues()
+    - [  ] List.suggestPhoto()
+    - [  ] List.suggestTip()
+    - [  ] List.getItemDetails()
+
+**Updates (requires acting user)**
+
+- [ ] /updates
+- [ ] /updates/ID
+
+**Photos (requires acting user)**
+
+- [  ] /photos/add
+
+**Settings (required acting user)**
+
+- [ ] /settings/all
+- [ ] /settings/ID
+- [ ] /settings/ID/set
+
+
+
+
+
+
 
 
 
