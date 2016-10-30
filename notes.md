@@ -31,13 +31,11 @@ The class is able to make calls to the api thanks to this helper function
 Here's a list of all the methods we will create
 ```javascript
     Nuddles.searchVenues(params) !DONE!
+    Nuddles.suggestCompletion(params) !DONE!
     Nuddles.getVenueDetail(id) !DONE!
     Nuddles.getVenueCategories() !DONE!
     Nuddles.getTrendingVenues(ll OR Near) !DONE! // Required ll OR near Optional limit and radius
     Nuddles.exploreVenues(ll OR near) !DONE! // Required ll OR near Optional (see the docs) on the site
-    Nuddles.getListDetails(listId)
-    Nuddles.getSpecialById(specialId)
-    Nuddles.getEventDetails(eventId)
 ```
 
 # Aspects Methods (that pertain to a single venue)
@@ -60,13 +58,20 @@ Here's a list of all the aspect methods we will create (limited to userless acti
 
 ## Todo
 
-- [  ] /v2/venues/searchcompletion
-- [  ] /v2/venues/add
-- [  ] /v2/venues/managed
-- [  ] /v2/venuegroups/GROUP_ID
-- [  ] Nuddles.getTimeSeries() [must be authenticated as the manager]
-- [  ] Venue.hereNow() [May require user login]
-- [  ] Venue.getSimilar() [may require user login]
+**Venues (required acting user)**
+
+- [  ] Nuddles.getDailyVenueStats() `/venues/timeseries`    (must be the manager)
+- [  ] Nuddles.managedVenues()      `/venues/managed`       (must be the manager)
+- [  ] Nuddles.addVenue()           `/venues/add`
+
+**Individual venue (requires acting user)**
+
+- [  ] Venue.getSimilar() `/venues/VENUE_ID/similar`
+- [  ] Venue.getStats()   `/venues/VENUE_ID/stats` (must be the manager)
+
+
+
+
 
 
 
