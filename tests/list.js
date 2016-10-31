@@ -9,7 +9,7 @@ let nuddles = new Nuddles({
     clientSecret: credentials.clientSecret
 })
 
-const karimsList = new List(nuddles, "355195508/tips")
+const karimsList = new List(nuddles, "5002dcdae4b0004dbeb53994")
 
 describe('Test List.getDetails', () => {
 
@@ -25,8 +25,9 @@ describe('Test List.getDetails', () => {
 
     it('returns a 400 when a wrong list id is passed', () => {
 
-        karimsList.venueId = "355195508/kwjtips"
-        let invalidVenueId = karimsList.venueId.split('/')[1]
+        let invalidVenueId = "5002dcdae4b0004dbeb53994oioi"
+        karimsList.venueId = invalidVenueId
+
         let details        = karimsList.getDetails()
 
         return details.catch( (errorMsg) => {
@@ -36,3 +37,14 @@ describe('Test List.getDetails', () => {
     })
 })
 
+describe('Test List.getDetails', () => {
+
+    it("returns a list's followers", () => {
+
+        let followers = karimsList.getFollowers()
+        return followers.then( (data) => {
+            assert.equal(200, data.meta.code)
+            assert.property(data.response, "followers")
+        })
+    })
+})
