@@ -46,7 +46,8 @@ And also a shared method for calling the api
 Here's a list of all the aspect methods we will create (limited to userless action)
 
 - The Venue constructor will take an id
-- Venue.getPhotos()
+- Venue.getDetails() !DONE!
+- Venue.getPhotos()  !DONE!
 - Venue.getEvents()
 - Venue.getLikes()
 - Venue.getNextVenues()
