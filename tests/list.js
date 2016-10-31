@@ -48,3 +48,15 @@ describe('Test List.getDetails', () => {
         })
     })
 })
+
+describe('Test List.getSaves', () => {
+
+    it("returns a list of users who have saved this list", () => {
+
+        let saves = karimsList.getSaves()
+        return saves.then( (data) => {
+            assert.equal(200, data.meta.code)
+            assert.property(data.response, "saves")
+        })
+    })
+})
