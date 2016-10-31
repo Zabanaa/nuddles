@@ -26,7 +26,7 @@ Venue.prototype.getLikes = function() {
 }
 
 Venue.prototype.getNextVenues = function() {
-    // return this.callApi
+    return this.callApi(this.rootPath + '/nextvenues')
 }
 
 Venue.prototype.getOpeningHours = function() {
