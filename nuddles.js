@@ -57,5 +57,9 @@ Nuddles.prototype.exploreVenues = function(params) {
     return this.callApi('/venues/explore', params)
 }
 
+Nuddles.prototype.searchSpecials = function(params) {
+    return this.callApi('/specials/search', params)
+}
+
 module.exports = Nuddles
 
