@@ -48,14 +48,14 @@ Here's a list of all the aspect methods we will create (limited to userless acti
 - The Venue constructor will take an id
 - Venue.getDetails() !DONE!
 - Venue.getPhotos()  !DONE!
-- Venue.getEvents()
-- Venue.getLikes()
-- Venue.getNextVenues()
-- Venue.getOpeningHours()
-- Venue.getThirdPartyLinks()
-- Venue.getMenu()
-- Venue.getTips()
-- Venue.getLists()
+- Venue.getEvents()  !DONE!
+- Venue.getLikes()   !DONE!
+- Venue.getNextVenues() !DONE!
+- Venue.getOpeningHours() !DONE!
+- Venue.getThirdPartyLinks() !DONE!
+- Venue.getMenu() !DONE!
+- Venue.getTips() !DONE!
+- Venue.getLists()!DONE
 
 ## Todo
 
@@ -111,17 +111,3 @@ Here's a list of all the aspect methods we will create (limited to userless acti
 - [ ] /settings/all
 - [ ] /settings/ID
 - [ ] /settings/ID/set
-
-
-
-
-
-
-
-
-
-
-
-
-
-
