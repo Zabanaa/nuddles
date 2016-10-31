@@ -124,11 +124,21 @@ describe('Test Venue.getMenu', () => {
 describe('Test Venue.getTips', () => {
 
     it('returns tips for a venue', () => {
-
         let tips = clintonBaking.getTips()
         return tips.then( (data) => {
             assert.equal(200, data.meta.code)
             assert.property(data.response, 'tips')
+        })
+    })
+})
+
+describe('Test Venue.getLists', () => {
+
+    it('returns a list of lists the venue is part of', () => {
+        let lists = clintonBaking.getLists()
+        return lists.then( (data) => {
+            assert.equal(200, data.meta.code)
+            assert.property(data.response, 'lists')
         })
     })
 })
