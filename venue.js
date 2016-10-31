@@ -49,4 +49,10 @@ Venue.prototype.getLists = function() {
     return this.callApi(this.rootPath + '/listed')
 }
 
+Venue.prototype.getSpecialDetails = function(specialId) {
+    let path    = '/specials/' + specialId
+    let params  = {venueId: this.venueId}
+    return this.callApi(path, params)
+}
+
 module.exports = Venue
