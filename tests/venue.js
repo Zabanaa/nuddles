@@ -35,3 +35,15 @@ describe('Test Venue.getDetails()', () => {
         })
     })
 })
+
+describe('Test Venue.getPhotos', () => {
+
+    it('returns a list of photos', () => {
+
+        let photosList = clintonBaking.getPhotos()
+        return photosList.then( (data) => {
+            assert.equal(200, data.meta.code)
+            assert.property(data.response, 'photos')
+        })
+    })
+})
