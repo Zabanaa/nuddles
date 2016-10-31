@@ -160,3 +160,29 @@ describe('Test Nuddles.suggestCompletion', () => {
         })
     })
 })
+
+describe('Test Nuddles.searchSpecials', () => {
+
+    it('returns a list of specials', () => {
+        let params   = { ll: '48.8676606,2.3498557' }
+        let specials = nuddles.searchSpecials(params)
+
+        return specials.then( (data) => {
+            let response = data.response
+            assert.equal(200, data.meta.code)
+            assert.property(response, 'specials')
+        })
+    })
+
+    it('returns a 400 bad request if no ll param is passed', () => {
+
+        let specials = nuddles.searchSpecials()
+        return specials.catch( (errorMsg) => {
+            assert.include(errorMsg, '400')
+            assert.include(errorMsg, 'Must provide parameter ll')
+        })
+    })
+})
+
+
+
