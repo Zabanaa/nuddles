@@ -59,3 +59,15 @@ describe('Test Venue.getEvents', () => {
         })
     })
 })
+
+describe('Test Venue.getLikes', () => {
+
+    it('returns the number of likes for that venue', () => {
+
+        let likes = clintonBaking.getLikes()
+        return likes.then( (data) => {
+            assert.equal(200, data.meta.code)
+            assert.property(data.response, 'likes')
+        })
+    })
+})
