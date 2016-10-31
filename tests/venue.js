@@ -96,3 +96,15 @@ describe('Test Venue.getOpeningHours', () => {
         })
     })
 })
+
+describe('Test Venue.getThirdPartyLinks', () => {
+
+    it('returns third party links for a venue', () => {
+
+        let likes = clintonBaking.getThirdPartyLinks()
+        return likes.then( (data) => {
+            assert.equal(200, data.meta.code)
+            assert.property(data.response, 'links')
+        })
+    })
+})
