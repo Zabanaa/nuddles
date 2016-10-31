@@ -1,7 +1,7 @@
 const Nuddles = require('./nuddles')
 
-const Venue = function(credentials, venueId) {
-    Nuddles.call(this, credentials)
+const Venue = function(nuddlesObject, venueId) {
+    Nuddles.call(this, nuddlesObject)
     this.venueId  = venueId
     this.rootPath = '/venues/' + this.venueId
 }
