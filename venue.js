@@ -22,7 +22,7 @@ Venue.prototype.getEvents = function() {
 }
 
 Venue.prototype.getLikes = function() {
-    // return this.callApi
+    return this.callApi(this.rootPath + '/likes')
 }
 
 Venue.prototype.getNextVenues = function() {
