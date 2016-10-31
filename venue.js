@@ -18,7 +18,7 @@ Venue.prototype.getPhotos = function() {
 }
 
 Venue.prototype.getEvents = function() {
-    // return this.callApi
+    return this.callApi(this.rootPath + '/events')
 }
 
 Venue.prototype.getLikes = function() {
