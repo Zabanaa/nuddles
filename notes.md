@@ -56,6 +56,7 @@ Here's a list of all the aspect methods we will create (limited to userless acti
 - Venue.getMenu() !DONE!
 - Venue.getTips() !DONE!
 - Venue.getLists()!DONE
+- Venue.getSpecialsId(specialId)
 
 ## Todo
 
@@ -63,8 +64,7 @@ Here's a list of all the aspect methods we will create (limited to userless acti
 
     Link to docs: https://developer.foursquare.com/docs/specials/
 
-    - [  ] Nuddles.searchSpecials(params)
-    - [  ] Nuddles.getSpecialDetails(specialId)
+    - [X] Nuddles.searchSpecials(params)
 
     Link to docs: https://developer.foursquare.com/docs/events/events
 
@@ -87,8 +87,8 @@ Here's a list of all the aspect methods we will create (limited to userless acti
     Create a List Class
     Link to docs: https://developer.foursquare.com/docs/lists/lists
 
-    - [  ] List.getDetails()
-    - [  ] List.getFollowers()
+    - [X] List.getDetails()
+    - [X] List.getFollowers()
     - [  ] List.getSaves()
 
     _requires acting user_
