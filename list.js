@@ -17,4 +17,8 @@ List.prototype.getFollowers = function() {
     return this.callApi(this.rootPath + '/followers')
 }
 
+List.prototype.getSaves = function() {
+    return this.callApi(this.rootPath + '/saves')
+}
+
 module.exports = List
