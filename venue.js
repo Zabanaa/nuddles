@@ -30,11 +30,11 @@ Venue.prototype.getNextVenues = function() {
 }
 
 Venue.prototype.getOpeningHours = function() {
-    // return this.callApi
+    return this.callApi(this.rootPath + '/hours')
 }
 
 Venue.prototype.getThirdPartyLinks = function() {
-    // return this.callApi
+    return this.callApi(this.rootPath + '/links')
 }
 
 Venue.prototype.getMenu = function() {
