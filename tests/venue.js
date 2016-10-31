@@ -83,3 +83,16 @@ describe('Test Venue.getNextVenues', () => {
         })
     })
 })
+
+describe('Test Venue.getOpeningHours', () => {
+
+    it('returns opening hours for a venue', () => {
+
+        let likes = clintonBaking.getOpeningHours()
+        return likes.then( (data) => {
+            assert.equal(200, data.meta.code)
+            assert.property(data.response, 'hours')
+            assert.property(data.response, 'popular')
+        })
+    })
+})
