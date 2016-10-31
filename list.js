@@ -13,4 +13,8 @@ List.prototype.getDetails = function() {
     return this.callApi(this.rootPath)
 }
 
+List.prototype.getFollowers = function() {
+    return this.callApi(this.rootPath + '/followers')
+}
+
 module.exports = List
