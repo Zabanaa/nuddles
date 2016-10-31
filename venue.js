@@ -2,19 +2,19 @@ const Nuddles = require('./nuddles')
 
 const Venue = function(credentials, venueId) {
     Nuddles.call(this, credentials)
-    this.venueId = venueId
+    this.venueId  = venueId
+    this.rootPath = '/venues/' + this.venueId
 }
 
 Venue.prototype = Object.create(Nuddles.prototype)
 Venue.prototype.constructor = Venue
 
 Venue.prototype.getDetails = function() {
-    let path = '/venues/' + this.venueId
-    return this.callApi(path)
+    return this.callApi(this.rootPath)
 }
 
 Venue.prototype.getPhotos = function() {
-    // return this.callApi
+    return this.callApi(this.rootPath + '/photos')
 }
 
 Venue.prototype.getEvents = function() {
