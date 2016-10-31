@@ -46,7 +46,7 @@ Venue.prototype.getTips = function() {
 }
 
 Venue.prototype.getLists = function() {
-    // return this.callApi
+    return this.callApi(this.rootPath + '/listed')
 }
 
 module.exports = Venue
