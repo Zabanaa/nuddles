@@ -38,11 +38,11 @@ Venue.prototype.getThirdPartyLinks = function() {
 }
 
 Venue.prototype.getMenu = function() {
-    // return this.callApi
+    return this.callApi(this.rootPath + "/menu")
 }
 
 Venue.prototype.getTips = function() {
-    // return this.callApi
+    return this.callApi(this.rootPath + '/tips')
 }
 
 Venue.prototype.getLists = function() {
