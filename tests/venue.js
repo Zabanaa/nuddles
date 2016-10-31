@@ -76,8 +76,8 @@ describe('Test Venue.getNextVenues', () => {
 
     it('returns a list of the most visited venues after this one', () => {
 
-        let likes = clintonBaking.getNextVenues()
-        return likes.then( (data) => {
+        let nextVenues = clintonBaking.getNextVenues()
+        return nextVenues.then( (data) => {
             assert.equal(200, data.meta.code)
             assert.property(data.response, 'nextVenues')
         })
@@ -88,8 +88,8 @@ describe('Test Venue.getOpeningHours', () => {
 
     it('returns opening hours for a venue', () => {
 
-        let likes = clintonBaking.getOpeningHours()
-        return likes.then( (data) => {
+        let openingHours = clintonBaking.getOpeningHours()
+        return openingHours.then( (data) => {
             assert.equal(200, data.meta.code)
             assert.property(data.response, 'hours')
             assert.property(data.response, 'popular')
@@ -101,10 +101,34 @@ describe('Test Venue.getThirdPartyLinks', () => {
 
     it('returns third party links for a venue', () => {
 
-        let likes = clintonBaking.getThirdPartyLinks()
-        return likes.then( (data) => {
+        let links = clintonBaking.getThirdPartyLinks()
+        return links.then( (data) => {
             assert.equal(200, data.meta.code)
             assert.property(data.response, 'links')
+        })
+    })
+})
+
+describe('Test Venue.getMenu', () => {
+
+    it('returns a menu for a venue', () => {
+
+        let menu = clintonBaking.getMenu()
+        return menu.then( (data) => {
+            assert.equal(200, data.meta.code)
+            assert.property(data.response, 'menu')
+        })
+    })
+})
+
+describe('Test Venue.getTips', () => {
+
+    it('returns tips for a venue', () => {
+
+        let tips = clintonBaking.getTips()
+        return tips.then( (data) => {
+            assert.equal(200, data.meta.code)
+            assert.property(data.response, 'tips')
         })
     })
 })
