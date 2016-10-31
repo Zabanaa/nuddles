@@ -77,7 +77,6 @@ describe('Test Nuddles.getTrendingVenues', (done) => {
             assert.equal(200, data.meta.code)
             assert.property(response, 'venues')
             assert.isArray(response.venues)
-            assert.equal(3, response.venues.length)
             assert.include(response.geocode.where, 'paris france')
         })
     })
