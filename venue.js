@@ -1,14 +1,16 @@
 const Nuddles = require('./nuddles')
 
-const Venue = function(venueId) {
-    // Make super call
+const Venue = function(credentials, venueId) {
+    Nuddles.call(this, credentials)
     this.venueId = venueId
 }
 
-// Do the inheritance shit here
+Venue.prototype = Object.create(Nuddles.prototype)
+Venue.prototype.constructor = Venue
 
 Venue.prototype.getDetails = function() {
-    // return this.callApi
+    let path = '/venues/' + this.venueId
+    return this.callApi(path)
 }
 
 Venue.prototype.getPhotos = function() {
