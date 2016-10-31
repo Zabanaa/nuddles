@@ -71,3 +71,15 @@ describe('Test Venue.getLikes', () => {
         })
     })
 })
+
+describe('Test Venue.getNextVenues', () => {
+
+    it('returns a list of the most visited venues after this one', () => {
+
+        let likes = clintonBaking.getNextVenues()
+        return likes.then( (data) => {
+            assert.equal(200, data.meta.code)
+            assert.property(data.response, 'nextVenues')
+        })
+    })
+})
