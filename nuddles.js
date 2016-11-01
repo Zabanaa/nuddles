@@ -1,14 +1,14 @@
 const utils = require('./utils')
 
-const Nuddles = function(credentials) {
+const Nuddles = function(config) {
 
-    utils.checkIsObject(credentials)
+    utils.checkIsObject(config)
 
-    if (!credentials.clientId || !credentials.clientSecret)
+    if (!config.clientId || !config.clientSecret)
         throw new Error("Missing required fields. Please refer to the documentation.")
 
-    this.clientId       = credentials.clientId
-    this.clientSecret   = credentials.clientSecret
+    this.clientId       = config.clientId
+    this.clientSecret   = config.clientSecret
 }
 
 Nuddles.prototype.callApi = function (path, queryParams) {
