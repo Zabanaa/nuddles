@@ -217,3 +217,18 @@ describe('Test Nuddles.searchEvents', () => {
     })
 
 })
+
+describe('Test Nuddles.getEventCategories', () => {
+
+    it('return a list of event categories', () => {
+        let eventCategories = nuddles.getEventCategories()
+
+        return eventCategories.then( (data) => {
+            let response = data.response
+            assert.equal(200, data.meta.code)
+            assert.property(response, 'categories')
+        })
+    })
+
+})
+
