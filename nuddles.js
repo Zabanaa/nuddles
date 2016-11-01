@@ -65,6 +65,10 @@ Nuddles.prototype.searchEvents = function(params) {
     return this.callApi('/events/search', params)
 }
 
+Nuddles.prototype.getEventCategories = function() {
+    return this.callApi('/events/categories')
+}
+
 
 module.exports = Nuddles
 
