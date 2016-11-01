@@ -1,6 +1,7 @@
 const Nuddles = require('./nuddles')
+const helpers = require('./helpers')
 
-const Venue = function(nuddlesObject, venueId) {
+const Venue = function(nuddlesObject, venueId=helpers.required('venueId argument must be specified')) {
     Nuddles.call(this, nuddlesObject)
     this.venueId  = venueId
     this.rootPath = '/venues/' + this.venueId

@@ -1,6 +1,7 @@
 const Nuddles = require('./nuddles')
+const helpers = require('./helpers')
 
-const List = function(nuddlesObject, listId) {
+const List = function(nuddlesObject, listId=helpers.required('listId argument must be specified')) {
     Nuddles.call(this, nuddlesObject)
     this.listId = listId
     this.rootPath = '/lists/' + this.listId
