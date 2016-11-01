@@ -6,6 +6,10 @@ const checkIsObject = (arg) => {
     }
 }
 
+const required = (message) => {
+   throw new Error(message)
+}
+
 const urlSerialise = (queryParams) => {
 
     let queryString = []
@@ -40,7 +44,8 @@ const makeRequest = (options) => {
 module.exports = {
     urlSerialise: urlSerialise,
     checkIsObject: checkIsObject,
-    makeRequest: makeRequest
+    makeRequest: makeRequest,
+    required: required
 
 }
 
