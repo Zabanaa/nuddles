@@ -184,5 +184,36 @@ describe('Test Nuddles.searchSpecials', () => {
     })
 })
 
+describe('Test Nuddles.searchEvents', () => {
 
 
+    it('returns a list of events matching the search params', () => {
+        let params   = {domain: 'songkick.com', eventId: '8183976'}
+        let events = nuddles.searchEvents(params)
+
+        return events.then( (data) => {
+            let response = data.response
+            assert.equal(200, data.meta.code)
+            assert.property(response, 'events')
+        })
+    })
+
+    it('returns a 400 bad request if no domain is passed', () => {
+        let params   = {eventId: '8183976'}
+        let events = nuddles.searchEvents(params)
+        return events.catch( (errorMsg) => {
+            assert.include(errorMsg, '400')
+            assert.include(errorMsg, 'Must provide parameter domain')
+        })
+    })
+
+    it('returns a 400 bad request if no eventId is passed', () => {
+        let params   = {domain: 'songkick.com'}
+        let events = nuddles.searchEvents(params)
+        return events.catch( (errorMsg) => {
+            assert.include(errorMsg, '400')
+            assert.include(errorMsg, 'Must specify eventId or participantId')
+        })
+    })
+
+})
