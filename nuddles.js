@@ -61,5 +61,10 @@ Nuddles.prototype.searchSpecials = function(params) {
     return this.callApi('/specials/search', params)
 }
 
+Nuddles.prototype.searchEvents = function(params) {
+    return this.callApi('/events/search', params)
+}
+
+
 module.exports = Nuddles
 
