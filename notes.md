@@ -1,21 +1,5 @@
 # Endpoints
 
-- /v2/venues/VENUE_ID (returns details about the venue)
-
-- /v2/venues/search (ll, location, query, altitude, limit, radius, altitude accuracy, ll
-  accuracy, ne, sw, categoryId, url, providerId, linkedId)
-
-- /v2/venues/categories (No params)
-
-- /v2/venues/trending ( ll, limit, radius)
-
-- /v2/venues/explore (ll, location, llAcc, alttitude, altitudeAcc, radius, section, query,
-  limit, offset, section (section invalidates the query if it's passed, there are tons of
-  choices, just look em up), time, day, venuePhotos, openNow, sortByDistance, price (give
-  a number), specials (boolean)) Novelty, friendsVisit, lastVenue, saved REQUIRE A LOGGED IN
-  USER
-
-
 The Nuddles constructor must be instatiated with a clientId and a clientSecret (show how
 to get both)
 
@@ -55,8 +39,8 @@ Here's a list of all the aspect methods we will create (limited to userless acti
 - Venue.getThirdPartyLinks() !DONE!
 - Venue.getMenu() !DONE!
 - Venue.getTips() !DONE!
-- Venue.getLists()!DONE
-- Venue.getSpecialsId(specialId)
+- Venue.getLists()!DONE!
+- Venue.getSpecialsId(specialId) !DONE!
 
 ## Todo
 
@@ -68,8 +52,8 @@ Here's a list of all the aspect methods we will create (limited to userless acti
 
     Link to docs: https://developer.foursquare.com/docs/events/events
 
-    - [  ] Nuddles.searchEvents(params)
-    - [  ] Nuddles.getEventCategories()
+    - [X] Nuddles.searchEvents(params)
+    - [X] Nuddles.getEventCategories()
 
 **Venues (required acting user)**
 
@@ -89,7 +73,6 @@ Here's a list of all the aspect methods we will create (limited to userless acti
 
     - [X] List.getDetails()
     - [X] List.getFollowers()
-    - [  ] List.getSaves()
 
     _requires acting user_
     - [  ] List.suggestVenues()
