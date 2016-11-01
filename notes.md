@@ -20,6 +20,9 @@ Here's a list of all the methods we will create
     Nuddles.getVenueCategories() !DONE!
     Nuddles.getTrendingVenues(ll OR Near) !DONE! // Required ll OR near Optional limit and radius
     Nuddles.exploreVenues(ll OR near) !DONE! // Required ll OR near Optional (see the docs) on the site
+    Nuddles.searchSpecials(params) !DONE!
+    Nuddles.searchEvents(params) !DONE!
+    Nuddles.getEventCategories() !DONE!
 ```
 
 # Aspects Methods (that pertain to a single venue)
@@ -41,6 +44,15 @@ Here's a list of all the aspect methods we will create (limited to userless acti
 - Venue.getTips() !DONE!
 - Venue.getLists()!DONE!
 - Venue.getSpecialsId(specialId) !DONE!
+
+## Lists
+
+    Create a List Class
+    Link to docs: https://developer.foursquare.com/docs/lists/lists
+
+    - [X] List.getDetails()
+    - [X] List.getFollowers()
+
 
 ## Todo
 
@@ -66,14 +78,7 @@ Here's a list of all the aspect methods we will create (limited to userless acti
     - [  ] Venue.getSimilar() `/venues/VENUE_ID/similar`
     - [  ] Venue.getStats()   `/venues/VENUE_ID/stats` (must be the manager)
 
-**Lists**
-
-    Create a List Class
-    Link to docs: https://developer.foursquare.com/docs/lists/lists
-
-    - [X] List.getDetails()
-    - [X] List.getFollowers()
-
+**List**
     _requires acting user_
     - [  ] List.suggestVenues()
     - [  ] List.suggestPhoto()
@@ -94,3 +99,13 @@ Here's a list of all the aspect methods we will create (limited to userless acti
 - [ ] /settings/all
 - [ ] /settings/ID
 - [ ] /settings/ID/set
+
+# Nuddles
+
+
+
+
+
+
+
+
