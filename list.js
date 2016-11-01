@@ -7,8 +7,7 @@ const List = function(nuddlesObject, listId=helpers.required('listId argument mu
     this.rootPath = '/lists/' + this.listId
 }
 
-List.prototype = Object.create(Nuddles.prototype)
-List.prototype.constructor = List
+List.prototype.callApi = Nuddles.prototype.callApi
 
 List.prototype.getDetails = function() {
     return this.callApi(this.rootPath)

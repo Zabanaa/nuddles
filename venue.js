@@ -7,8 +7,7 @@ const Venue = function(nuddlesObject, venueId=helpers.required('venueId argument
     this.rootPath = '/venues/' + this.venueId
 }
 
-Venue.prototype = Object.create(Nuddles.prototype)
-Venue.prototype.constructor = Venue
+Venue.prototype.callApi = Nuddles.prototype.callApi
 
 Venue.prototype.getDetails = function() {
     return this.callApi(this.rootPath)
