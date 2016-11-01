@@ -1,5 +1,5 @@
-const Nuddles = require('./nuddles')
-const helpers = require('./helpers')
+const Nuddles   = require('./nuddles')
+const utils     = require('./utils')
 
 const Venue = function(nuddlesObject, venueId=helpers.required('venueId argument must be specified')) {
     Nuddles.call(this, nuddlesObject)

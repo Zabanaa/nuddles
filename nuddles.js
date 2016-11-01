@@ -1,8 +1,8 @@
-const helpers = require('./helpers')
+const utils = require('./utils')
 
 const Nuddles = function(credentials) {
 
-    helpers.checkIsObject(credentials)
+    utils.checkIsObject(credentials)
 
     if (!credentials.clientId || !credentials.clientSecret)
         throw new Error("Missing required fields. Please refer to the documentation.")
@@ -14,10 +14,10 @@ const Nuddles = function(credentials) {
 Nuddles.prototype.callApi = function (path, queryParams) {
 
     const root = "https://api.foursquare.com/v2"
-    const queryString = helpers.urlSerialise(queryParams)
+    const queryString = utils.urlSerialise(queryParams)
 
     if (queryParams) {
-        helpers.checkIsObject(queryParams)
+        utils.checkIsObject(queryParams)
     }
 
     let options = {
@@ -29,7 +29,7 @@ Nuddles.prototype.callApi = function (path, queryParams) {
         }
     }
 
-    return helpers.makeRequest(options)
+    return utils.makeRequest(options)
 }
 
 Nuddles.prototype.searchVenues = function(params) {
