@@ -46,6 +46,5 @@ module.exports = {
     checkIsObject: checkIsObject,
     makeRequest: makeRequest,
     required: required
-
 }
 
