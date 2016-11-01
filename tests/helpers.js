@@ -2,7 +2,7 @@ const chai      = require('chai')
 const assert    = chai.assert
 const helpers   = require('../helpers')
 
-describe('Object required', () => {
+describe('Test helpers.checkIsObject()', () => {
 
     it('throws an error if the argument passed is not an object', () => {
         assert.throws( function(){helpers.checkIsObject('hello')}, Error, "An object must be passed")
@@ -13,13 +13,25 @@ describe('Object required', () => {
     })
 })
 
-describe('Serialise Query Parameters Object', () => {
+describe('Test helpers.urlSerialise()', () => {
 
     let obj     = {key1: "key_1", key2: "key_2"}
     let result  = "key1=key_1&key2=key_2&v=20161026"
 
     it('serialises an object to a URL safe string', () => {
         assert.equal( helpers.urlSerialise(obj), result )
+    })
+
+})
+
+describe('Test helpers.required()', () => {
+
+    let someFunc = (someValue=helpers.required('pass the value')) => {
+        return someValue
+    }
+
+    it('Throws an error if the argument is not overriden', () => {
+       assert.throws( function() {someFunc()}, Error, "pass the value" )
     })
 
 })
