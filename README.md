@@ -139,7 +139,7 @@ Nuddles is a work in progress and an open source project. If you spot something 
 be improved, or find a better way to achieve the same functionality, please feel free to
 add your contribution by way of a pull request.
 
-## Licence
+## License
 Nuddles is project is licensed under the Do What The Fuck You Want licence.
 
 ## Todo
