@@ -1,9 +1,9 @@
 # Nuddles
 
-This node module is a wrapper around foursquare's API.
+Nuddles is a Node.js wrapper for the foursquare API.
+It will enable you to effortlessly query their multiple endpoints.
+We make no assumptions about how you are going to use it, we just return the data to
+you. You are free do manipulate the results as you wish.
 
-As of now, it only support userless requests
-
-OAuth integration is in the pipeline
-
-More info after the break.
+_Please note that Nuddles currently only supports userless access but plans to add OAuth
+authentication are in the pipeline_
