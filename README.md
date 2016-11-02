@@ -13,6 +13,16 @@ authentication are in the pipeline._
 Before you can start using Nuddles, please make sure you have your access tokens ready. If you
 don't know how to aquire those, you can simply head over to the [foursquare developers
 site][1], click "create new app" and follow the instructions. Foursquare will provide you with
-a `clientId` and a `clientSecret` token that you will need to use to query the API.
+a `clientId` and a `clientSecret` token that you will need to query the API.
+
+
+## Installation
+
+```bash
+    $ npm install nuddles
+```
+
+_Depending on your setup, you may need to have sudo privileges_
+
 
 [1]: https://developer.foursquare.com/
