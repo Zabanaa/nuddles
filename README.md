@@ -140,7 +140,7 @@ be improved, or find a better way to achieve the same functionality, please feel
 add your contribution by way of a pull request.
 
 ## License
-Nuddles is project is licensed under the Do What The Fuck You Want licence.
+Nuddles is licensed under the Do What The Fuck You Want licence.
 
 ## Todo
 - [  ] Add OAuth authentication
