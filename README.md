@@ -106,16 +106,45 @@ client.getEventCategories()
 ```
 ### Venue
 ```javascript
+venue.getDetails()
+venue.getPhotos()
+venue.getEvents()
+venue.getLikes()
+venue.getNextVenues()
+venue.getOpeningHours()
+venue.getThirdPartyLinks()
+venue.getMenu()
+venue.getTips()
+venue.getLists()
+venue.getSpecialDetails(specialId)
 ```
 
 
 ### List
 ```javascript
+list.getFollowers()
+list.getSaves()
+list.getDetails()
 ```
 
 ## Testing
+In order to run the tests:
+
+- rename the `credentials.example.js` file to `example.js`
+- fill in your personal credentials
+- run `npm test`
+
 ## Contributing
+Nuddles is a work in progress and an open source project. If you spot something that can
+be improved, or find a better way to achieve the same functionality, please feel free to
+add your contribution by way of a pull request.
+
 ## Licence
+Nuddles is project is licensed under the Do What The Fuck You Want licence.
+
 ## Todo
+- [  ] Add OAuth authentication
+- [  ] Add support for user related endpoints
+
 
 [1]: https://developer.foursquare.com/
