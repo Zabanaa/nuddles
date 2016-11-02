@@ -22,7 +22,30 @@ a `clientId` and a `clientSecret` token that you will need to query the API.
     $ npm install nuddles
 ```
 
-_Depending on your setup, you may need to have sudo privileges_
+_Depending on your setup, you may need sudo privileges_
 
+## Usage
+
+To use Nuddles in your project you first need to import it and instantiate a new object.
+
+```javascript
+    const Nuddles       = require('nuddles')
+    const client        = new Nuddles({
+                    clientId: "your client id",
+                    clientSecret: "your client secret"
+            })
+```
+
+Every new Nuddles object must be instantiated with both your `clientId` and `clientSecret`,
+you can also specify an optional api version if you wish to (it currently defaults to
+`20161026`)
+
+```javascript
+const client = new Nuddles({
+            clientId: "your client id",
+            clientSecret: "your client secret",
+            apiVersion: "YYYYMMDD"
+        })
+```
 
 [1]: https://developer.foursquare.com/
