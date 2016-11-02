@@ -88,5 +88,34 @@ venue.getOpeningHours()
 list.getFollowers()
 ```
 
+## Full list of methods
+
+### All Venues
+
+```javascript
+client.searchVenues(params)
+client.suggestCompletion(params)
+client.getVenueDetail(venueId) (will be deprecated)
+client.getVenueCategories()
+client.getTrendingVenues(params)
+client.exploreVenues(params)
+client.searchSpecials(params)
+client.searchEvents(params)
+client.getEventCategories()
+
+```
+### Venue
+```javascript
+```
+
+
+### List
+```javascript
+```
+
+## Testing
+## Contributing
+## Licence
+## Todo
 
 [1]: https://developer.foursquare.com/
