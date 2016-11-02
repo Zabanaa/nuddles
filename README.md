@@ -52,16 +52,16 @@ Nuddles also exposes two other classes: `Venue` and `List`. Use them to retrieve
 about a specific venue or list. Each respectively take a `venueId` and a `listId` as their
 only arguments.
 
-Venue
+###Venue
 
 ```javascript
-const venue = new nuddles.Venue(venueId)
+const venue = new nuddles.Venue("someVenueId")
 ```
 
-List
+###List
 
 ```javascript
-const list = new nuddles.List(listId)
+const list = new nuddles.List("someListId")
 ```
 
 
