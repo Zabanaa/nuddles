@@ -18,8 +18,6 @@ const urlSerialise = (queryParams) => {
         queryString.push( key + "=" + queryParams[key] )
     }
 
-    queryString.splice(queryString.length, 0, "v=20161026")
-
     return queryString.join('&')
 }
 

@@ -9,6 +9,7 @@ const Nuddles = function(config) {
 
     this.clientId       = config.clientId
     this.clientSecret   = config.clientSecret
+    this.apiVersion     = config.apiVersion || "20161026"
 }
 
 Nuddles.prototype.callApi = function (path, queryParams) {
@@ -21,7 +22,7 @@ Nuddles.prototype.callApi = function (path, queryParams) {
     }
 
     let options = {
-        'url': root + path + "?" + queryString + "&client_id=" + this.clientId + "&client_secret=" + this.clientSecret,
+        'url': `${root}${path}?v=${this.apiVersion}${queryString}&client_id=${this.clientId}&client_secret=${this.clientSecret}`,
         'method': 'GET',
         'encoding': undefined,
         'headers': {
