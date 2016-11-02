@@ -26,17 +26,17 @@ _Depending on your setup, you may need sudo privileges_
 
 ## Usage
 
-To use Nuddles in your project you first need to import it and instantiate a new object.
+To use Nuddles in your project you first need to import it and instantiate a new `Client` object.
 
 ```javascript
-const Nuddles       = require('nuddles')
-const client        = new Nuddles({
+const nuddles       = require('nuddles')
+const client        = new nuddles.Client({
         clientId: "your client id",
         clientSecret: "your client secret"
 })
 ```
 
-Every new Nuddles object must be instantiated with both your `clientId` and `clientSecret`,
+Every new `Client` object must be instantiated with both your `clientId` and `clientSecret`,
 you can also specify an optional api version if you wish to (it currently defaults to
 `20161026`)
 
@@ -47,5 +47,22 @@ const client = new Nuddles({
     apiVersion: "YYYYMMDD"
 })
 ```
+
+Nuddles also exposes two other classes: `Venue` and `List`. Use them to retrieve info
+about a specific venue or list. Each respectively take a `venueId` and a `listId` as their
+only arguments.
+
+Venue
+
+```javascript
+const venue = new nuddles.Venue(venueId)
+```
+
+List
+
+```javascript
+const list = new nuddles.List(listId)
+```
+
 
 [1]: https://developer.foursquare.com/
