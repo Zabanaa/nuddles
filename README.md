@@ -143,8 +143,8 @@ add your contribution by way of a pull request.
 Nuddles is licensed under the Do What The Fuck You Want licence.
 
 ## Todo
-- [  ] Add OAuth authentication
-- [  ] Add support for user related endpoints
+- [ ] Add OAuth authentication
+- [ ] Add support for user related endpoints
 
 
 [1]: https://developer.foursquare.com/
