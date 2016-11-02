@@ -64,5 +64,29 @@ const venue = new nuddles.Venue("someVenueId")
 const list = new nuddles.List("someListId")
 ```
 
+## Examples
+
+### Search Venues
+
+```javascript
+client.searchVenues({
+    near: 'Paris, France',
+    query: 'pizza'
+})
+```
+
+### Get a Venue's Opening Hours
+
+```javascript
+
+venue.getOpeningHours()
+
+```
+
+### Get a List's Followers
+```javascript
+list.getFollowers()
+```
+
 
 [1]: https://developer.foursquare.com/
