@@ -66,13 +66,15 @@ const list = new nuddles.List("someListId")
 
 ## Examples
 
+_Please  note that all methods return promises, which means you will have to call `.then(0)` to manipulate the response_
+
 ### Search Venues
 
 ```javascript
-client.searchVenues({
-    near: 'Paris, France',
-    query: 'pizza'
-})
+client.searchVenues({ near: 'Paris, France', query: 'pizza' })
+    .then( (data) => {
+        // Do something with the response
+    })
 ```
 
 ### Get a Venue's Opening Hours
