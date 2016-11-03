@@ -1,15 +1,15 @@
 const chai          = require('chai')
 const assert        = chai.assert
-const Nuddles       = require('../nuddles')
+const nuddles       = require('../index')
 const Venue         = require('../venue')
 const credentials   = require('../credentials')
 
-let nuddles = new Nuddles({
+let client = new nuddles.Client({
     clientId: credentials.clientId,
     clientSecret: credentials.clientSecret
 })
 
-const clintonBaking = new Venue(nuddles, "40a55d80f964a52020f31ee3")
+const clintonBaking = new nuddles.Venue(client, "40a55d80f964a52020f31ee3")
 
 describe('Test Venue.getDetails()', () => {
 
@@ -27,7 +27,7 @@ describe('Test Venue.getDetails()', () => {
 
     it('will return a 400 bad request when given an invalid id', () => {
 
-        const someRandomVenue = new Venue(nuddles, "someid")
+        const someRandomVenue = new nuddles.Venue(client, "someid")
         let venueDetails = someRandomVenue.getDetails()
         return venueDetails.catch( (errorMsg) => {
             assert.include(errorMsg, '400')
