@@ -49,19 +49,22 @@ const client = new Nuddles({
 ```
 
 Nuddles also exposes two other classes: `Venue` and `List`. Use them to retrieve info
-about a specific venue or list. Each respectively take a `venueId` and a `listId` as their
+about a specific venue or list. Each respectively accept a `venueId` and a `listId` along
+with the client instance to inherit from as arguments.
 only arguments.
 
 ###Venue
 
 ```javascript
-const venue = new nuddles.Venue("someVenueId")
-```
 
-###List
+const client = new nuddles.Client({clientId: "your client id", clientSecret:"your client secret"})
 
-```javascript
+// Venue
+const venue = new nuddles.Venue(client, "someVenueId")
+
+// List
 const list = new nuddles.List("someListId")
+
 ```
 
 ## Examples
