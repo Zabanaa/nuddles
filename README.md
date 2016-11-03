@@ -154,11 +154,11 @@ be improved, or find a better way to achieve the same functionality, please feel
 add your contribution by way of a pull request.
 
 ## License
-Nuddles is licensed under the Do What The Fuck You Want licence.
+Nuddles is licensed under the Do What The Fuck You Want license.
 
 ## Todo
 - [ ] Add OAuth authentication
-- [ ] Add support for user related endpoints
+- [ ] Add support for user related endpoints (Settings, Tips, Updates, Photos, Users ...)
 
 
 [1]: https://developer.foursquare.com/
