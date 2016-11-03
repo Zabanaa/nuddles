@@ -1,6 +1,6 @@
 const utils = require('./utils')
 
-const Nuddles = function(config) {
+const Client = function(config) {
 
     utils.checkIsObject(config)
 
@@ -12,7 +12,7 @@ const Nuddles = function(config) {
     this.apiVersion     = config.apiVersion || "20161026"
 }
 
-Nuddles.prototype.callApi = function (path, queryParams) {
+Client.prototype.callApi = function (path, queryParams) {
 
     const root = "https://api.foursquare.com/v2"
     const queryString = utils.urlSerialise(queryParams)
@@ -22,7 +22,7 @@ Nuddles.prototype.callApi = function (path, queryParams) {
     }
 
     let options = {
-        'url': `${root}${path}?v=${this.apiVersion}${queryString}&client_id=${this.clientId}&client_secret=${this.clientSecret}`,
+        'url': `${root}${path}?v=${this.apiVersion}&${queryString}&client_id=${this.clientId}&client_secret=${this.clientSecret}`,
         'method': 'GET',
         'encoding': undefined,
         'headers': {
@@ -33,43 +33,43 @@ Nuddles.prototype.callApi = function (path, queryParams) {
     return utils.makeRequest(options)
 }
 
-Nuddles.prototype.searchVenues = function(params) {
+Client.prototype.searchVenues = function(params) {
     return this.callApi('/venues/search', params)
 }
 
-Nuddles.prototype.suggestCompletion = function(params) {
+Client.prototype.suggestCompletion = function(params) {
     return this.callApi('/venues/suggestCompletion', params)
 }
 
-Nuddles.prototype.getVenueDetail = function(venueId) {
+Client.prototype.getVenueDetail = function(venueId) {
     let path = '/venues/' + venueId
     return this.callApi(path)
 }
 
-Nuddles.prototype.getVenueCategories = function() {
+Client.prototype.getVenueCategories = function() {
     return this.callApi('/venues/categories')
 }
 
-Nuddles.prototype.getTrendingVenues = function(params) {
+Client.prototype.getTrendingVenues = function(params) {
     return this.callApi('/venues/trending', params)
 }
 
-Nuddles.prototype.exploreVenues = function(params) {
+Client.prototype.exploreVenues = function(params) {
     return this.callApi('/venues/explore', params)
 }
 
-Nuddles.prototype.searchSpecials = function(params) {
+Client.prototype.searchSpecials = function(params) {
     return this.callApi('/specials/search', params)
 }
 
-Nuddles.prototype.searchEvents = function(params) {
+Client.prototype.searchEvents = function(params) {
     return this.callApi('/events/search', params)
 }
 
-Nuddles.prototype.getEventCategories = function() {
+Client.prototype.getEventCategories = function() {
     return this.callApi('/events/categories')
 }
 
 
-module.exports = Nuddles
+module.exports = Client
 
