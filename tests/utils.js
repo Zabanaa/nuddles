@@ -16,7 +16,7 @@ describe('Test utils.checkIsObject()', () => {
 describe('Test utils.urlSerialise()', () => {
 
     let obj     = {key1: "key_1", key2: "key_2"}
-    let result  = "key1=key_1&key2=key_2&v=20161026"
+    let result  = "key1=key_1&key2=key_2"
 
     it('serialises an object to a URL safe string', () => {
         assert.equal( utils.urlSerialise(obj), result )
