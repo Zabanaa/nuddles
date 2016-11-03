@@ -1,5 +1,8 @@
 # Nuddles
 
+_Thank you for checking out this repo. This is my first attempt at publishing a package to
+the npm registry so any feedback is appreciated_
+
 Nuddles is a Node.js wrapper for the foursquare API.
 It will enable you to effortlessly query their multiple endpoints.
 We make no assumptions about how you are going to use it, we just return the data to
