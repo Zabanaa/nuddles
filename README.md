@@ -98,6 +98,8 @@ list.getFollowers()
 
 ### All Venues
 
+[Docs][3]
+
 ```javascript
 client.searchVenues(params)
 client.suggestCompletion(params)
@@ -111,6 +113,9 @@ client.getEventCategories()
 
 ```
 ### Venue
+
+[Docs][3] _look under `aspects`_
+
 ```javascript
 venue.getDetails()
 venue.getPhotos()
@@ -127,6 +132,9 @@ venue.getSpecialDetails(specialId)
 
 
 ### List
+
+[Docs][4]
+
 ```javascript
 list.getFollowers()
 list.getSaves()
@@ -155,3 +163,9 @@ Nuddles is licensed under the Do What The Fuck You Want licence.
 
 [1]: https://developer.foursquare.com/
 [2]: https://developer.foursquare.com/docs/
+[3]: https://developer.foursquare.com/docs/venues/venues
+[4]: https://developer.foursquare.com/docs/lists/lists
+
+
+
+
