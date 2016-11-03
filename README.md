@@ -66,7 +66,11 @@ const list = new nuddles.List("someListId")
 
 ## Examples
 
-_Please  note that all methods return promises, which means you will have to call `.then(0)` to manipulate the response_
+_Please  note that all methods return promises, which means you will have to call `.then()` to manipulate the response_
+
+All methods that accept a `params` argument should be passed an object with a list of
+query parameters for your request, these parameters should match the ones listed in the
+[official documentation.][2]
 
 ### Search Venues
 
@@ -150,3 +154,4 @@ Nuddles is licensed under the Do What The Fuck You Want licence.
 
 
 [1]: https://developer.foursquare.com/
+[2]: https://developer.foursquare.com/docs/
