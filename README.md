@@ -49,9 +49,9 @@ const client = new Nuddles({
 ```
 
 Nuddles also exposes two other classes: `Venue` and `List`. Use them to retrieve info
-about a specific venue or list. Each respectively accept a `venueId` and a `listId` along
-with the client instance to inherit from as arguments.
-only arguments.
+about a specific venue or list.
+
+Each respectively accept a `venueId` and a `listId` along with the client instance to inherit from as arguments.
 
 ###Venue
 
