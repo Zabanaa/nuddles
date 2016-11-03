@@ -1,13 +1,13 @@
-const Nuddles   = require('./nuddles')
+const Client    = require('./client')
 const utils     = require('./utils')
 
-const List = function(nuddlesObject, listId=helpers.required('listId argument must be specified')) {
-    Nuddles.call(this, nuddlesObject)
+const List = function(clientConfig, listId=helpers.required('listId argument must be specified')) {
+    Client.call(this, clientConfig)
     this.listId = listId
     this.rootPath = '/lists/' + this.listId
 }
 
-List.prototype.callApi = Nuddles.prototype.callApi
+List.prototype.callApi = Client.prototype.callApi
 
 List.prototype.getDetails = function() {
     return this.callApi(this.rootPath)

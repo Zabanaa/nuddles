@@ -1,13 +1,13 @@
-const Nuddles   = require('./nuddles')
+const Client    = require('./client')
 const utils     = require('./utils')
 
-const Venue = function(nuddlesObject, venueId=helpers.required('venueId argument must be specified')) {
-    Nuddles.call(this, nuddlesObject)
+const Venue = function(clientConfig, venueId=helpers.required('venueId argument must be specified')) {
+    Client.call(this, clientConfig)
     this.venueId  = venueId
     this.rootPath = '/venues/' + this.venueId
 }
 
-Venue.prototype.callApi = Nuddles.prototype.callApi
+Venue.prototype.callApi = Client.prototype.callApi
 
 Venue.prototype.getDetails = function() {
     return this.callApi(this.rootPath)
