@@ -1,19 +1,19 @@
 const chai          = require('chai')
 const assert        = chai.assert
-const Nuddles       = require('../nuddles')
+const nuddles       = require('../index')
 const credentials   = require('../credentials')
 
-const nuddles       = new Nuddles({
+const client       = new nuddles.Client({
     clientId: credentials.clientId,
     clientSecret: credentials.clientSecret
 })
 
-describe('Test Nuddles.searchVenues', (done) => {
+describe('Test Client.searchVenues', (done) => {
 
     it('searches venues and returns results based on location',() => {
 
         let params          = {'near': 'Paris, France'}
-        let searchVenues    = nuddles.searchVenues(params)
+        let searchVenues    = client.searchVenues(params)
         return searchVenues.then( (data) => {
             let response = data.response
             assert.equal(200, data.meta.code)
@@ -30,7 +30,7 @@ describe('Test Nuddles.getVenueDetail', (done) => {
 
     it('returns all the details for a specific venue given an ID', () => {
         let venueId      = '4adcda0af964a520623421e3'
-        let venueDetails = nuddles.getVenueDetail(venueId)
+        let venueDetails = client.getVenueDetail(venueId)
 
         return venueDetails.then( (data) => {
             let response = data.response
@@ -42,7 +42,7 @@ describe('Test Nuddles.getVenueDetail', (done) => {
 
     it('returns a 400 if the provided venueID is invalid', () => {
         let venueId = "invalididbruv"
-        let venueDetails = nuddles.getVenueDetail(venueId)
+        let venueDetails = client.getVenueDetail(venueId)
         return venueDetails.catch( (errorMsg) => {
             assert.include(errorMsg, '400')
             assert.include(errorMsg, venueId + ' is invalid for venue id')
@@ -54,7 +54,7 @@ describe('Test Nuddles.getVenueDetail', (done) => {
 describe(' Test Nuddles.getVenueCategories', (done) => {
 
     it('returns a list of all categories', () => {
-        let venueCategories = nuddles.getVenueCategories()
+        let venueCategories = client.getVenueCategories()
         return venueCategories.then( (data) => {
             let response = data.response
             assert.equal(200, data.meta.code)
@@ -71,7 +71,7 @@ describe('Test Nuddles.getTrendingVenues', (done) => {
     it('returns a list of trending venues', () => {
 
         let params          = {near: 'Paris, France', limit: 3, radius: 2000}
-        let trendingVenues  = nuddles.getTrendingVenues(params)
+        let trendingVenues  = client.getTrendingVenues(params)
         return trendingVenues.then( (data) => {
             let response = data.response
             assert.equal(200, data.meta.code)
@@ -84,7 +84,7 @@ describe('Test Nuddles.getTrendingVenues', (done) => {
     it('returns a 400 if no location parameter is passed', () => {
 
         let params          = {limit: 3, radius: 1700}
-        let trendingVenues  = nuddles.getTrendingVenues(params)
+        let trendingVenues  = client.getTrendingVenues(params)
 
         return trendingVenues.catch( (errorMsg) => {
             assert.include(errorMsg, '400')
@@ -98,7 +98,7 @@ describe('Test Nuddles.exploreVenues', () => {
     it('returns one or more groups of recommendations', () => {
 
         let params          = {near: 'Paris, France', limit: 3, radius: 1700}
-        let recommendations = nuddles.exploreVenues(params)
+        let recommendations = client.exploreVenues(params)
 
         return recommendations.then( (data) => {
             let response = data.response
@@ -110,7 +110,7 @@ describe('Test Nuddles.exploreVenues', () => {
     it('returns a 400 if no location attribute is passed', () => {
 
         let params          = {limit: 3}
-        let recommendations = nuddles.exploreVenues(params)
+        let recommendations = client.exploreVenues(params)
 
         return recommendations.catch( (errorMsg) => {
             assert.include(errorMsg, 400)
@@ -128,7 +128,7 @@ describe('Test Nuddles.suggestCompletion', () => {
 
     it('Returns a list of mini venues based on a search query', () => {
 
-        let minivenues  = nuddles.suggestCompletion(params)
+        let minivenues  = client.suggestCompletion(params)
 
         return minivenues.then( (data) => {
             let response = data.response
@@ -141,7 +141,7 @@ describe('Test Nuddles.suggestCompletion', () => {
     it('Returns a 400 when missing query or location parameters', () => {
         delete params.query
 
-        let minivenues = nuddles.suggestCompletion(params)
+        let minivenues = client.suggestCompletion(params)
 
         return minivenues.catch( (errorMsg) => {
 
@@ -153,7 +153,7 @@ describe('Test Nuddles.suggestCompletion', () => {
     it('Returns an empty array when passed an unknown query parameter', () => {
 
         params.query = "whfwhfw"
-        let minivenues = nuddles.suggestCompletion(params)
+        let minivenues = client.suggestCompletion(params)
         return minivenues.then( (data) => {
             let response = data.response
             assert.equal(0, response.minivenues.length)
@@ -165,7 +165,7 @@ describe('Test Nuddles.searchSpecials', () => {
 
     it('returns a list of specials', () => {
         let params   = { ll: '48.8676606,2.3498557' }
-        let specials = nuddles.searchSpecials(params)
+        let specials = client.searchSpecials(params)
 
         return specials.then( (data) => {
             let response = data.response
@@ -176,7 +176,7 @@ describe('Test Nuddles.searchSpecials', () => {
 
     it('returns a 400 bad request if no ll param is passed', () => {
 
-        let specials = nuddles.searchSpecials()
+        let specials = client.searchSpecials()
         return specials.catch( (errorMsg) => {
             assert.include(errorMsg, '400')
             assert.include(errorMsg, 'Must provide parameter ll')
@@ -189,7 +189,7 @@ describe('Test Nuddles.searchEvents', () => {
 
     it('returns a list of events matching the search params', () => {
         let params   = {domain: 'songkick.com', eventId: '8183976'}
-        let events = nuddles.searchEvents(params)
+        let events = client.searchEvents(params)
 
         return events.then( (data) => {
             let response = data.response
@@ -200,7 +200,7 @@ describe('Test Nuddles.searchEvents', () => {
 
     it('returns a 400 bad request if no domain is passed', () => {
         let params   = {eventId: '8183976'}
-        let events = nuddles.searchEvents(params)
+        let events = client.searchEvents(params)
         return events.catch( (errorMsg) => {
             assert.include(errorMsg, '400')
             assert.include(errorMsg, 'Must provide parameter domain')
@@ -209,7 +209,7 @@ describe('Test Nuddles.searchEvents', () => {
 
     it('returns a 400 bad request if no eventId is passed', () => {
         let params   = {domain: 'songkick.com'}
-        let events = nuddles.searchEvents(params)
+        let events = client.searchEvents(params)
         return events.catch( (errorMsg) => {
             assert.include(errorMsg, '400')
             assert.include(errorMsg, 'Must specify eventId or participantId')
@@ -221,7 +221,7 @@ describe('Test Nuddles.searchEvents', () => {
 describe('Test Nuddles.getEventCategories', () => {
 
     it('return a list of event categories', () => {
-        let eventCategories = nuddles.getEventCategories()
+        let eventCategories = client.getEventCategories()
 
         return eventCategories.then( (data) => {
             let response = data.response
