@@ -1,21 +1,21 @@
 {
   "name": "nuddles",
   "version": "1.0.0",
-  "description": "Node.js wrapper around the foursquare API",
-  "main": "index.js",
+  "description": "Node.js wrapper for the Foursquare API",
+  "main": "./index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --timeout 15000 tests/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Zabanaa/npm-foursquare.git"
+    "url": "git+https://github.com/Zabanaa/nuddles.git"
   },
   "author": "Karim Cheurfi <karim.cheurfi@gmail.com> (Zabana)",
-  "license": "ISC",
+  "license": "WTFPL",
   "bugs": {
-    "url": "https://github.com/Zabanaa/npm-foursquare/issues"
+    "url": "https://github.com/Zabanaa/nuddles/issues"
   },
-  "homepage": "https://github.com/Zabanaa/npm-foursquare#readme",
+  "homepage": "https://github.com/Zabanaa/nuddles#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
