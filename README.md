@@ -71,7 +71,7 @@ _Please  note that all methods return promises, which means you will have to cal
 ### Search Venues
 
 ```javascript
-client.searchVenues({ near: 'Paris, France', query: 'pizza' })
+client.searchVenues({ near: 'Paris, France', query: 'pizza' }) // Your other query params here
     .then( (data) => {
         // Do something with the response
     })
