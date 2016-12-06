@@ -1,9 +1,5 @@
-const Client  = require('./client')
-const Venue   = require('./venue')
-const List    = require('./list')
+'use strict'
 
-module.exports = {
-    Client: Client,
-    Venue: Venue,
-    List: List
-}
+module.exports.Nuddles  = require('./lib/nuddles')
+module.exports.Venue    = require('./lib/venue')
+module.exports.List     = require('./lib/list')
