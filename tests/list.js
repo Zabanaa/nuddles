@@ -1,13 +1,10 @@
 const chai          = require('chai')
 const assert        = chai.assert
 const nuddles       = require('../index')
-const List          = require('../list')
-const credentials   = require('../credentials')
+const List          = require('../lib/list')
+const credentials   = { clientId, clientSecret } = require('../config/credentials')
 
-let client = new nuddles.Client({
-    clientId: credentials.clientId,
-    clientSecret: credentials.clientSecret
-})
+let client = new nuddles.Nuddles({ clientId, clientSecret })
 
 const karimsList = new List(client, "5002dcdae4b0004dbeb53994")
 
