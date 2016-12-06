@@ -2,12 +2,9 @@ const chai          = require('chai')
 const assert        = chai.assert
 const nuddles       = require('../index')
 const Venue         = require('../lib/venue')
-const credentials   = require('../config/credentials')
+const credentials   = { clientId, clientSecret } = require('../config/credentials')
 
-let client = new nuddles.Nuddles({
-    clientId: credentials.clientId,
-    clientSecret: credentials.clientSecret
-})
+let client = new nuddles.Nuddles({ clientId, clientSecret })
 
 const clintonBaking = new nuddles.Venue(client, "40a55d80f964a52020f31ee3")
 
