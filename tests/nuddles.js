@@ -1,12 +1,10 @@
 const chai          = require('chai')
 const assert        = chai.assert
 const nuddles       = require('../index')
-const credentials   = require('../config/credentials')
+const Nuddles       = nuddles.Nuddles
+const credentials   = { clientId, clientSecret } = require('../config/credentials')
 
-const client       = new nuddles.Nuddles({
-    clientId: credentials.clientId,
-    clientSecret: credentials.clientSecret
-})
+const client       = new Nuddles({ clientId, clientSecret })
 
 describe('Test Client.searchVenues', (done) => {
 

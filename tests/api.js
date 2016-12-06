@@ -1,9 +1,10 @@
 const  chai         = require('chai')
 const  assert       = chai.assert
 const  nuddles      = require('../index')
+const  Nuddles      = nuddles.Nuddles
 const  credentials  = { clientId, clientSecret } = require('../config/credentials')
 
-let client = new nuddles.Nuddles({ clientId, clientSecret })
+let client = new Nuddles({ clientId, clientSecret })
 
 describe("Calls to the API actually work", (done) => {
 
