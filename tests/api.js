@@ -1,18 +1,15 @@
 const  chai         = require('chai')
 const  assert       = chai.assert
 const  nuddles      = require('../index')
-const  credentials  = require('../credentials')
+const  credentials  = { clientId, clientSecret } = require('../config/credentials')
 
-let client = new nuddles.Client({
-    clientId: credentials.clientId,
-    clientSecret: credentials.clientSecret
-})
+let client = new nuddles.Nuddles({ clientId, clientSecret })
 
 describe("Calls to the API actually work", (done) => {
 
     it('returns a list of categories', () => {
 
-        let categories = client.callApi('/venues/categories', {})
+        let categories = client.GET('/venues/categories')
         return categories.then( (data) => {
             assert.equal(200, data.meta.code)
             assert.property(data.response, 'categories')
@@ -23,7 +20,7 @@ describe("Calls to the API actually work", (done) => {
 
     it('returns a 404 when a non-existent endpoint is passed', () => {
 
-        let invalidCall    = client.callApi('/someendpoint', {})
+        let invalidCall    = client.GET('/someendpoint')
         return invalidCall.catch( (errorMsg) => {
             assert.include(errorMsg, "Endpoint not found")
             assert.include(errorMsg, "404")
@@ -32,12 +29,8 @@ describe("Calls to the API actually work", (done) => {
 
     it('returns a 400 bad request if invalid credentials are passed', () => {
 
-        client = new nuddles.Client({
-            clientId: "bruvvv",
-            clientSecret: "secretsaucebitch"
-        })
-
-        let categories = client.callApi('/venues/categories', {})
+        client = new nuddles.Nuddles({ clientId: "bruvvv", clientSecret: "secretsaucebitch" })
+        let categories = client.GET('/venues/categories')
         return categories.catch( (errorMsg) => {
             assert.include(errorMsg, "Missing access credentials.")
             assert.include(errorMsg, "400")
