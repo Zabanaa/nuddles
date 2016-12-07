@@ -5,8 +5,8 @@ catch (e){
     console.log("No credentials file found. Using environment variables instead.")
 
     module.exports.creds = {
-        clientId: process.env['USER'],
-        clientSecret: process.env['HOME']
+        clientId: process.env['CLIENT_ID'],
+        clientSecret: process.env['CLIENT_SECRET']
     }
     console.log(module.exports.creds)
 }
