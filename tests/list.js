@@ -3,7 +3,7 @@ const assert        = chai.assert
 const nuddles       = require('../index')
 const Nuddles       = nuddles.Nuddles
 const List          = require('../lib/list')
-const credentials   = { clientId, clientSecret } = require('../config/credentials')
+const credentials   = require('./config')
 
 let client = new Nuddles({ clientId, clientSecret })
 
