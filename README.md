@@ -115,6 +115,10 @@ client.exploreVenues(params)
 client.searchSpecials(params)
 client.searchEvents(params)
 client.getEventCategories()
+client.getTipLikes()
+client.getTipLists()
+client.getTipSaves()
+client.getCheckinLikes()
 
 ```
 ### Venue

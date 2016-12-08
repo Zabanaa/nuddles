@@ -5,7 +5,7 @@ const Nuddles       = nuddles.Nuddles
 const credentials   = {clientId, clientSecret} = require('./config')
 const client        = new Nuddles({ clientId, clientSecret })
 
-describe('Test Client.searchVenues', (done) => {
+describe('Test Nuddles.searchVenues', () => {
 
     it('searches venues and returns results based on location',() => {
 
@@ -21,6 +21,66 @@ describe('Test Client.searchVenues', (done) => {
 
     })
 
+})
+
+describe('Test Nuddles.getChekinsLikes', () => {
+
+    it('returns a list of likes for a specific checkin', () => {
+
+        let checkinId           = '502bcde16de4146b7f104ac6'
+        let getCheckinLikes     = client.getCheckinLikes(checkinId)
+
+        return getCheckinLikes.then( data => {
+            let response = data.response
+            assert.equal(200, data.meta.code)
+            assert.property(response, 'likes')
+            assert.isArray(response.likes.items)
+        })
+    })
+})
+
+describe('Test Nuddles tips methods', () => {
+
+    let tipId = '4e5b969ab61c4aaa3e183989'
+
+    it('Nuddles.getTipLikes returns a list of likes for a specific tip', () => {
+
+        let getTipLikes = client.getTipLikes(tipId)
+
+        return getTipLikes.then( data => {
+            let response = data.response
+            assert.equal(200, data.meta.code)
+            assert.property(response, 'likes')
+            assert.property(response.likes, 'count')
+        })
+
+    })
+
+    it('Nuddles.getTipSaves returns a list of saves for a specific tip', () => {
+
+        let getTipSaves = client.getTipSaves(tipId)
+
+        return getTipSaves.then( data => {
+            let response = data.response
+            assert.equal(200, data.meta.code)
+            assert.property(response, 'saves')
+            assert.property(response.saves, 'count')
+            assert.isArray(response.saves.items)
+        })
+    })
+
+    it('Nuddles.getTipLists returns a list of lists for a specific tip', () => {
+
+        let getTipLists = client.getTipLists(tipId)
+
+        return getTipLists.then( data => {
+            let response = data.response
+            assert.equal(200, data.meta.code)
+            assert.property(response, 'lists')
+            assert.property(response.lists, 'count')
+            assert.isArray(response.lists.groups)
+        })
+    })
 })
 
 describe('Test Nuddles.getVenueDetail', (done) => {
