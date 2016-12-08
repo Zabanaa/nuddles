@@ -5,7 +5,7 @@ const Nuddles       = nuddles.Nuddles
 const credentials   = {clientId, clientSecret} = require('./config')
 const client        = new Nuddles({ clientId, clientSecret })
 
-describe('Test Client.searchVenues', (done) => {
+describe('Test Nuddles.searchVenues', () => {
 
     it('searches venues and returns results based on location',() => {
 
@@ -21,6 +21,22 @@ describe('Test Client.searchVenues', (done) => {
 
     })
 
+})
+
+describe('Test Nuddles.getChekinsLikes', () => {
+
+    it('returns a list of likes for a specific checkin', () => {
+
+        let checkinId           = '502bcde16de4146b7f104ac6'
+        let getCheckinLikes     = client.getCheckinLikes(checkinId)
+
+        return getCheckinLikes.then( data => {
+            let response = data.response
+            assert.equal(200, data.meta.code)
+            assert.property(response, 'likes')
+            assert.isArray(response.likes.items)
+        })
+    })
 })
 
 describe('Test Nuddles.getVenueDetail', (done) => {
