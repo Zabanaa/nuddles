@@ -39,7 +39,7 @@ describe('Test Nuddles.getChekinsLikes', () => {
     })
 })
 
-describe('Test Nuddles.tips methods', () => {
+describe('Test Nuddles tips methods', () => {
 
     let tipId = '4e5b969ab61c4aaa3e183989'
 
@@ -56,9 +56,19 @@ describe('Test Nuddles.tips methods', () => {
 
     })
 
+    it('Nuddles.getTipSaves returns a list of saves for a specific tip', () => {
+
+        let getTipSaves = client.getTipSaves(tipId)
+
+        return getTipSaves.then( data => {
+            let response = data.response
+            assert.equal(200, data.meta.code)
+            assert.property(response, 'saves')
+            assert.property(response.saves, 'count')
+            assert.isArray(response.saves.items)
+        })
+    })
 })
-
-
 
 describe('Test Nuddles.getVenueDetail', (done) => {
 
