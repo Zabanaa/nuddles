@@ -68,6 +68,19 @@ describe('Test Nuddles tips methods', () => {
             assert.isArray(response.saves.items)
         })
     })
+
+    it('Nuddles.getTipLists returns a list of lists for a specific tip', () => {
+
+        let getTipLists = client.getTipLists(tipId)
+
+        return getTipLists.then( data => {
+            let response = data.response
+            assert.equal(200, data.meta.code)
+            assert.property(response, 'lists')
+            assert.property(response.lists, 'count')
+            assert.isArray(response.lists.groups)
+        })
+    })
 })
 
 describe('Test Nuddles.getVenueDetail', (done) => {
