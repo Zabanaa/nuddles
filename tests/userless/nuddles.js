@@ -1,13 +1,13 @@
 const chai          = require('chai')
 const assert        = chai.assert
-const nuddles       = require('../index')
-const Nuddles       = nuddles.Nuddles
-const credentials   = {clientId, clientSecret} = require('./config')
+const Nuddles       = require('../../index').Nuddles
+const creds         = { clientId, clientSecret, redirectUri } = require('../../config/credentials')
 let client
 
 beforeEach( () => {
-    client        = new Nuddles({ clientId, clientSecret, redirectUri: "yoursite.com/callback" })
+    client = new Nuddles({clientId, clientSecret, redirectUri: "http://localhost"})
 })
+
 
 describe("Test Nuddles.creds getter", () => {
 

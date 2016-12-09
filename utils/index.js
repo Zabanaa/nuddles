@@ -2,15 +2,19 @@ const nets = require('nets')
 
 const validateConfig = config => {
 
-  // Check that config is an object
-  if (typeof config !== "object") {
-    throw new Error("Config must be an object")
-  }
+    // Check that config is an object
+    if (typeof config !== "object") {
+        throw new Error("Config must be an object")
+    }
 
-  if (!config.clientId || !config.clientSecret) {
-    throw new Error("Missing required fields. Please refer to the documentation")
-  }
+    // If the user does not pass an accessToken
+    // check that they at least passed their client credentials
+    if (!config.accessToken) {
 
+        if (!config.clientId || !config.clientSecret) {
+            throw new Error("Missing required fields. Please refer to the documentation")
+        }
+    }
 }
 
 const required = (message) => {
