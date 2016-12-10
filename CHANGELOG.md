@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](changelog) and this project adheres to
 
 =========
 
+## Unrealeased
+
+### Added
+
+- oAuth2 authentication flow
+- support for protected endpoints '/lists' endpoints
+- listId is now an optional argument for all of nuddles.List's methods
+
 ## 1.1.0 2016-12-08
 
 ### Added
