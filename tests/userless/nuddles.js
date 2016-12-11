@@ -1,6 +1,6 @@
 const chai          = require('chai')
 const assert        = chai.assert
-const Nuddles       = require('../../index').Nuddles
+const Nuddles       = require('../../index').Client
 const creds         = { clientId, clientSecret, redirectUri } = require('../../config/credentials')
 let client
 
