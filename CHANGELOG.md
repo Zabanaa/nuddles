@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](changelog) and this project adheres to
 
 =========
 
-## Unrealeased
+## 1.2.0 2016-12-10
 
 ### Added
 
