@@ -227,12 +227,25 @@ venue.getSpecialDetails(specialId)
 list.getFollowers()
 list.getSaves()
 list.getDetails()
+list.add()
+list.update()
+list.share()
+list.requestSuitableTips()
+list.requestSuitablePhotos()
+list.requestSuitableVenues()
+list.addItem()
+list.updateItem()
+list.deleteItem()
+list.moveItem()
+list.getItemDetails()
+list.follow()
+list.unfollow()
 ```
 
 ## Testing
 In order to run the tests:
 
-- rename the `credentials.example.js` file to `example.js`
+- rename the `credentials.example.js` file to `credentials.js`
 - fill in your personal credentials
 - run `npm test`
 
