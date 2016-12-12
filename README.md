@@ -59,7 +59,7 @@ The setup above is perfectly fine for making requests to Foursquare's publicly a
 endpoints. However if you need to access protected endpoints that require acting users,
 you must first authenticate them using the OAuth2 flow.
 
-1. Instantiate a new `nuddles.Client` object
+1. *Instantiate a new `nuddles.Client` object*
 ```javascript
 const client = new Nuddles({
     clientId: "your client id",
@@ -72,14 +72,14 @@ const client = new Nuddles({
 Notice that we pass a `redirectUri` attribute to the config. It must match the
 redirect uri you set when creating the app on the foursquare developer's site.
 
-2. Create an authorization link / button for your users
+2. *Create an authorization link / button for your users*
 
 ```javascript
 const authorizationUrl = client.auth_url
 // Render this url as a link / button in your front end app
 ```
 
-3. Request an access token
+3. *Request an access token*
 
 Once your users click on the link and give your app authorization to use their account on
 their behalf, they will be redirected to your `redirectUri`.
@@ -92,7 +92,7 @@ variable.
 // Example using express
 let authorizationCode
 
-app.get('/redirectUri', req, res, () => {
+app.get('/redirectUri', (req, res) => {
    authorizationCode = req.query.code
 })
 
@@ -108,7 +108,7 @@ client.requestAccessToken(authorizationCode)
 
 ```
 
-4. Set your access token
+4. *Set your access token*
 
 ```javascript
 client.accessToken = "yourSavedAccessToken"
@@ -118,7 +118,7 @@ client.accessToken = "yourSavedAccessToken"
 __Ideally you'd want to store your credentials in a separate config file ignored by
 version control or in environment variables__
 
-5. Set your acccess token directly
+5. *Set your acccess token directly*
 
 Alternatively, if you already have an access token, you can just skip step 1 to 4 and
 directly instantiate a client with your accessToken.
@@ -144,7 +144,7 @@ const client = new nuddles.Client({clientId: "your client id", clientSecret:"you
 const venue = new nuddles.Venue(client, "someVenueId")
 
 // List
-const list = new nuddles.List("someListId")
+const list = new nuddles.List(client, "someListId")
 
 ```
 
