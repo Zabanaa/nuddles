@@ -1,5 +1,8 @@
 # Nuddles
 
+_Thank you for checking out this repo. This is my first attempt at publishing a package to
+the npm registry so any feedback is appreciated_
+
 Nuddles is a Node.js wrapper for the foursquare API.
 It will enable you to effortlessly query their multiple endpoints.
 We make no assumptions about how you are going to use it, we just return the data to
@@ -56,7 +59,7 @@ The setup above is perfectly fine for making requests to Foursquare's publicly a
 endpoints. However if you need to access protected endpoints that require acting users,
 you must first authenticate them using the OAuth2 flow.
 
-*Step 1: Instantiate a new `nuddles.Client` object*
+1. *Instantiate a new `nuddles.Client` object*
 ```javascript
 const client = new Nuddles({
     clientId: "your client id",
@@ -69,14 +72,14 @@ const client = new Nuddles({
 Notice that we pass a `redirectUri` attribute to the config. It must match the
 redirect uri you set when creating the app on the foursquare developer's site.
 
-*Step 2: Create an authorization link / button for your users*
+2. *Create an authorization link / button for your users*
 
 ```javascript
 const authorizationUrl = client.auth_url
 // Render this url as a link / button in your front end app
 ```
 
-*Step 3: Request an access token*
+3. *Request an access token*
 
 Once your users click on the link and give your app authorization to use their account on
 their behalf, they will be redirected to your `redirectUri`.
@@ -105,7 +108,7 @@ client.requestAccessToken(authorizationCode)
 
 ```
 
-*Step 4: Set your access token*
+4. *Set your access token*
 
 ```javascript
 client.accessToken = "yourSavedAccessToken"
@@ -115,7 +118,7 @@ client.accessToken = "yourSavedAccessToken"
 __Ideally you'd want to store your credentials in a separate config file ignored by
 version control or in environment variables__
 
-*Set your acccess token directly*
+5. *Set your acccess token directly*
 
 Alternatively, if you already have an access token, you can just skip step 1 to 4 and
 directly instantiate a client with your accessToken.
@@ -242,6 +245,7 @@ add your contribution by way of a pull request.
 Nuddles is licensed under the Do What The Fuck You Want license.
 
 ## Todo
+- [ ] Add OAuth authentication
 - [ ] Add support for user related endpoints (Settings, Tips, Updates, Photos, Users ...)
 
 
@@ -249,3 +253,7 @@ Nuddles is licensed under the Do What The Fuck You Want license.
 [2]: https://developer.foursquare.com/docs/
 [3]: https://developer.foursquare.com/docs/venues/venues
 [4]: https://developer.foursquare.com/docs/lists/lists
+
+
+
+
