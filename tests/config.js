@@ -1,6 +1,15 @@
+let clientId, clientSecret, accessToken
 const Nuddles           = require('../index').Client
-const credentials       = { clientId, clientSecret, accessToken } =  require('../config/credentials')
-const userlessClient    = new Nuddles({ clientId, clientSecret })
-const authClient        = new Nuddles({ accessToken })
 
-module.exports = { userlessClient, authClient }
+try{
+    const credentials       = { clientId, clientSecret, accessToken } =  require('../config/credentials')
+}
+catch(e) {
+    console.log("Config file not found. Using environment variables instead.")
+    clientId            = process.env['CLIENT_ID']
+    clientSecret        = process.env['CLIENT_SECRET']
+    accessToken         = process.env['ACCESS_TOKEN']
+}
+
+module.exports.userlessClient      = new Nuddles({ clientId, clientSecret })
+module.exports.authClient          = new Nuddles({ accessToken })
