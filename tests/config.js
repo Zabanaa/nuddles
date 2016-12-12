@@ -11,5 +11,10 @@ catch(e) {
     accessToken         = process.env['ACCESS_TOKEN']
 }
 
-module.exports.userlessClient      = new Nuddles({ clientId, clientSecret })
-module.exports.authClient          = new Nuddles({ accessToken })
+let userlessClient      = new Nuddles({ clientId, clientSecret })
+let authClient          = new Nuddles({ accessToken })
+
+console.log(userlessClient)
+console.log(authClient)
+
+module.exports = { userlessClient, authClient }
