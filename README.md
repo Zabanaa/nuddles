@@ -7,13 +7,10 @@ It will enable you to effortlessly query their multiple endpoints.
 We make no assumptions about how you are going to use it, we just return the data to
 you. You are free do manipulate the results as you wish.
 
-_Please note that Nuddles currently only supports userless access but plans to add OAuth
-authentication are in the pipeline._
-
 ## Requirements
 
 Before you can start using Nuddles, please make sure you have your access tokens ready. If you
-don't know how to aquire those, you can simply head over to the [foursquare developers
+don't know how to aquire them, you can simply head over to the [foursquare developers
 site][1], click "create new app" and follow the instructions. Foursquare will provide you with
 a `clientId` and a `clientSecret` token that you will need to query the API.
 
@@ -21,14 +18,16 @@ a `clientId` and a `clientSecret` token that you will need to query the API.
 ## Installation
 
 ```bash
-$ npm install nuddles
+$ npm install nuddles --save
 ```
 
 _Depending on your setup, you may need sudo privileges_
 
 ## Usage
 
-To use Nuddles in your project you first need to import it and instantiate a new `Client` object.
+### Userless Access
+
+To use Nuddles in your project, you first need to import it and instantiate a new `Client` object.
 
 ```javascript
 const nuddles       = require('nuddles')
@@ -50,6 +49,82 @@ const client = new Nuddles({
 })
 ```
 
+### Authenticated requests
+
+The setup above is perfectly fine for making requests to Foursquare's publicly accessible
+endpoints. However if you need to access protected endpoints that require acting users,
+you must first authenticate them using the OAuth2 flow.
+
+**Step 1: Instantiate a new `nuddles.Client` object**
+```javascript
+const client = new Nuddles({
+    clientId: "your client id",
+    clientSecret: "your client secret",
+    apiVersion: "YYYYMMDD", // optional
+    redirectUri: "your redirect uri"
+})
+
+```
+Notice that we pass a `redirectUri` attribute to the config. It must match the
+redirect uri you set when creating the app on the foursquare developer's site.
+
+**Step 2: Create an authorization link / button for your users**
+
+```javascript
+const authorizationUrl = client.auth_url
+// Render this url as a link / button in your front end app
+```
+
+**Step 3: Request an access token**
+
+Once your users click on the link and give your app authorization to use their account on
+their behalf, they will be redirected to your `redirectUri`.
+
+An authorization code will be passed along as a query parameter. You will need to capture that code and store it in a
+variable.
+
+```javascript
+
+// Example using express
+let authorizationCode
+
+app.get('/redirectUri', (req, res) => {
+   authorizationCode = req.query.code
+})
+
+```
+
+Once you have that code you can request an access token to Foursquare
+
+```javascript
+
+client.requestAccessToken(authorizationCode)
+    .then( data => console.log(data.accessToken) ) // Make note of this token
+    .catch( error => console.error(error) ) // Handle the error
+
+```
+
+**Step 4: Set your access token**
+
+```javascript
+client.accessToken = "yourSavedAccessToken"
+
+```
+
+__Ideally you'd want to store your credentials in a separate config file ignored by
+version control or in environment variables__
+
+**Set your acccess token directly**
+
+Alternatively, if you already have an access token, you can just skip step 1 to 4 and
+directly instantiate a client with your accessToken.
+
+```javascript
+const client = nuddles.Client({
+    accessToken: "your access token"
+})
+```
+
 Nuddles also exposes two other classes: `Venue` and `List`. Use them to retrieve info
 about a specific venue or list.
 
@@ -65,7 +140,7 @@ const client = new nuddles.Client({clientId: "your client id", clientSecret:"you
 const venue = new nuddles.Venue(client, "someVenueId")
 
 // List
-const list = new nuddles.List("someListId")
+const list = new nuddles.List(client, "someListId")
 
 ```
 
@@ -148,12 +223,25 @@ venue.getSpecialDetails(specialId)
 list.getFollowers()
 list.getSaves()
 list.getDetails()
+list.add()
+list.update()
+list.share()
+list.requestSuitableTips()
+list.requestSuitablePhotos()
+list.requestSuitableVenues()
+list.addItem()
+list.updateItem()
+list.deleteItem()
+list.moveItem()
+list.getItemDetails()
+list.follow()
+list.unfollow()
 ```
 
 ## Testing
 In order to run the tests:
 
-- rename the `credentials.example.js` file to `example.js`
+- rename the `credentials.example.js` file to `credentials.js`
 - fill in your personal credentials
 - run `npm test`
 
@@ -166,7 +254,6 @@ add your contribution by way of a pull request.
 Nuddles is licensed under the Do What The Fuck You Want license.
 
 ## Todo
-- [ ] Add OAuth authentication
 - [ ] Add support for user related endpoints (Settings, Tips, Updates, Photos, Users ...)
 
 
@@ -174,7 +261,3 @@ Nuddles is licensed under the Do What The Fuck You Want license.
 [2]: https://developer.foursquare.com/docs/
 [3]: https://developer.foursquare.com/docs/venues/venues
 [4]: https://developer.foursquare.com/docs/lists/lists
-
-
-
-
