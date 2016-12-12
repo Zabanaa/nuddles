@@ -1,7 +1,17 @@
 const chai          = require('chai')
 const assert        = chai.assert
 const Nuddles       = require('../../index').Client
-const creds         = { clientId, clientSecret, redirectUri } = require('../../config/credentials')
+let clientId, clientSecret, redirectUri
+
+try {
+    const creds         = { clientId, clientSecret, redirectUri } = require('../../config/credentials')
+}
+catch(e) {
+    clientId         = process.env['CLIENT_ID']
+    clientSecret     = process.env['CLIENT_SECRET']
+    redirectUri      = process.env['REDIRECT_URI']
+}
+
 let client
 
 beforeEach( () => {
