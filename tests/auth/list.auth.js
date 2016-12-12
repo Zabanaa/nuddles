@@ -2,7 +2,7 @@ const chai          = require('chai')
 const assert        = chai.assert
 const List          = require('../../index').List
 const client        = require('../config').authClient
-
+console.log(client)
 const myList        = new List(client, "584c01290393cc2b62a8f669")
 
 describe(" TEST client.POST", () => {
