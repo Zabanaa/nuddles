@@ -59,7 +59,7 @@ The setup above is perfectly fine for making requests to Foursquare's publicly a
 endpoints. However if you need to access protected endpoints that require acting users,
 you must first authenticate them using the OAuth2 flow.
 
-*Step 1: Instantiate a new `nuddles.Client` object*
+**Step 1: Instantiate a new `nuddles.Client` object**
 ```javascript
 const client = new Nuddles({
     clientId: "your client id",
@@ -72,14 +72,14 @@ const client = new Nuddles({
 Notice that we pass a `redirectUri` attribute to the config. It must match the
 redirect uri you set when creating the app on the foursquare developer's site.
 
-*Step 2: Create an authorization link / button for your users*
+**Step 2: Create an authorization link / button for your users**
 
 ```javascript
 const authorizationUrl = client.auth_url
 // Render this url as a link / button in your front end app
 ```
 
-*Step 3: Request an access token*
+**Step 3: Request an access token**
 
 Once your users click on the link and give your app authorization to use their account on
 their behalf, they will be redirected to your `redirectUri`.
@@ -108,7 +108,7 @@ client.requestAccessToken(authorizationCode)
 
 ```
 
-*Step 4: Set your access token*
+**Step 4: Set your access token**
 
 ```javascript
 client.accessToken = "yourSavedAccessToken"
@@ -118,7 +118,7 @@ client.accessToken = "yourSavedAccessToken"
 __Ideally you'd want to store your credentials in a separate config file ignored by
 version control or in environment variables__
 
-*Step 5: Set your acccess token directly*
+**Set your acccess token directly**
 
 Alternatively, if you already have an access token, you can just skip step 1 to 4 and
 directly instantiate a client with your accessToken.
