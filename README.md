@@ -123,7 +123,7 @@ const client = nuddles.Client({
 })
 ```
 
-Nuddles also exposes two other classes: `Venue` and `List`. Use them to retrieve info
+Nuddles also exposes three other classes: `Venue`, `Checkin` and  `List`. Use them to retrieve info
 about a specific venue or list.
 
 Each respectively accept a `venueId` and a `listId` along with the client instance to inherit from as arguments.
@@ -236,6 +236,21 @@ list.follow()
 list.unfollow()
 ```
 
+### Checkin
+
+[Docs][5]
+
+```javascript
+checkin.getDetails()
+checkin.recent()
+checkin.add()
+checkin.like()
+checkin.likes()
+checkin.addPost()
+checkin.addComment()
+checkin.deleteComment()
+```
+
 ## Testing
 In order to run the tests:
 
@@ -259,3 +274,4 @@ Nuddles is licensed under the Do What The Fuck You Want license.
 [2]: https://developer.foursquare.com/docs/
 [3]: https://developer.foursquare.com/docs/venues/venues
 [4]: https://developer.foursquare.com/docs/lists/lists
+[5]: https://developer.foursquare.com/docs/checkins/checkins
