@@ -1,7 +1,5 @@
 # Nuddles
 
-<img src="https://travis-ci.org/Zabanaa/nuddles.svg?branch=master">
-
 Nuddles is a Node.js wrapper for the foursquare API.
 It will enable you to effortlessly query their multiple endpoints.
 We make no assumptions about how you are going to use it, we just return the data to
@@ -240,7 +238,7 @@ list.unfollow()
 
 ### Checkin
 
-```
+```javascript
 checkin.getDetails()
 checkin.recent()
 checkin.add()
