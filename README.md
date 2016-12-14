@@ -238,6 +238,8 @@ list.unfollow()
 
 ### Checkin
 
+[Docs][5]
+
 ```javascript
 checkin.getDetails()
 checkin.recent()
@@ -272,3 +274,4 @@ Nuddles is licensed under the Do What The Fuck You Want license.
 [2]: https://developer.foursquare.com/docs/
 [3]: https://developer.foursquare.com/docs/venues/venues
 [4]: https://developer.foursquare.com/docs/lists/lists
+[5]: https://developer.foursquare.com/docs/checkins/checkins
