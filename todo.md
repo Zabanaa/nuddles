@@ -1,7 +1,0 @@
-venue.stats()
-venue.timeseries()
-venue.managed()
-venue.claim()
-venue.setrole()
-venue.edit()
-venue.setsinglelocation()
