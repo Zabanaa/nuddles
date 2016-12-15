@@ -2,7 +2,7 @@ const chai          = require('chai')
 const assert        = chai.assert
 const Venue         = require('../../index').Venue
 const client        = require('../config').authClient
-const venue         = new Venue(client, "584fb4fd9465dd73e761838f")
+const venue         = new Venue(client, "584fb4a0d25ded0b5e958c97")
 
 describe("TEST Venue.add", () => {
 
