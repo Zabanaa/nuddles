@@ -1,6 +1,7 @@
 'use strict'
 
 module.exports.Client   = require('./lib/nuddles')
+module.exports.Settings = require('./lib/settings')
 module.exports.Photo    = require('./lib/photo')
 module.exports.Tip      = require('./lib/tip')
 module.exports.Venue    = require('./lib/venue')
