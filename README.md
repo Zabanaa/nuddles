@@ -123,10 +123,9 @@ const client = nuddles.Client({
 })
 ```
 
-Nuddles also exposes six other classes: `Venue`, `Checkin`, `Tip`, `Photo`, `Settings` and  `List`. Use them to retrieve info
-about a specific venue or list.
+Nuddles also exposes seven other classes: `Event`, `Venue`, `Checkin`, `Tip`, `Photo`, `Settings` and  `List`.
 
-Each respectively accept a `venueId` and a `listId` along with the client instance to inherit from as arguments.
+All of the above classes must be instantiated with a client instance and an id (`venueId` for venue, `listId` for a list etc)
 
 ###Venue
 
@@ -281,6 +280,14 @@ photo.getDetails()
 settings.getDetails()
 settings.all()
 settings.set()
+```
+
+### Event
+
+[Docs][9]
+
+```javascript
+Event.getDetails()
 ```
 
 ## Testing
