@@ -290,6 +290,15 @@ settings.set()
 Event.getDetails()
 ```
 
+### Special
+
+[Docs][10]
+
+```javascript
+Special.getDetails()
+Special.flag()
+```
+
 ## Testing
 In order to run the tests:
 
@@ -306,7 +315,7 @@ add your contribution by way of a pull request.
 Nuddles is licensed under the Do What The Fuck You Want license.
 
 ## Todo
-- [ ] Add support for user related endpoints (Settings, Tips, Updates, Photos, Users ...)
+- [ ] Add Support for User Related Endpoints
 
 [1]: https://developer.foursquare.com/
 [2]: https://developer.foursquare.com/docs/
@@ -316,3 +325,5 @@ Nuddles is licensed under the Do What The Fuck You Want license.
 [6]: https://developer.foursquare.com/docs/tips/tips
 [7]: https://developer.foursquare.com/docs/photos/photos
 [8]: https://developer.foursquare.com/docs/settings/settings
+[9]: https://developer.foursquare.com/docs/events/events
+[10]: https://developer.foursquare.com/docs/specials/specials
