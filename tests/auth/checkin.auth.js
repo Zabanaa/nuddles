@@ -119,7 +119,6 @@ describe("TEST Checkin.addComment", () => {
         let addComment  = checkin.addComment(comment)
 
         return addComment.then( data => {
-            console.log(data.response.comment.id)
             assert.equal(data.meta.code, 200)
             assert.property(data.response, 'comment')
         })
