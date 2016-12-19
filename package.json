@@ -3,6 +3,7 @@
   "version": "1.3.0",
   "description": "Node.js wrapper for the Foursquare API",
   "main": "./index.js",
+  "keywords": "Foursquare, http, wrapper",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --timeout 15000 tests/**/*.js"
   },
