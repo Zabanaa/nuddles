@@ -123,7 +123,7 @@ const client = nuddles.Client({
 })
 ```
 
-Nuddles also exposes seven other classes: `Event`, `Venue`, `Checkin`, `Tip`, `Photo`, `Settings` and  `List`.
+Nuddles also exposes seven other classes: `User`, `Venue`, `Checkin`, `Tip`, `Photo`, `Settings` and  `List`.
 
 All of the above classes must be instantiated with a client instance and an id (`venueId` for venue, `listId` for a list etc)
 
@@ -299,6 +299,22 @@ Special.getDetails()
 Special.flag()
 ```
 
+### User
+
+[Docs][11]
+
+```javascript
+User.getDetails()
+User.search()
+User.getVenueHistory()
+User.getPhotos()
+User.getFriends()
+User.getCheckins()
+User.getVenueLikes()
+User.getMayorships()
+User.getLists()
+```
+
 ## Testing
 In order to run the tests:
 
@@ -315,7 +331,14 @@ add your contribution by way of a pull request.
 Nuddles is licensed under the Do What The Fuck You Want license.
 
 ## Todo
-- [ ] Add Support for User Related Endpoints
+- [ ] User.deny()
+- [ ] User.setPings()
+- [ ] User.updatePhoto()
+- [ ] User.unfriend()
+- [ ] User.approve()
+- [ ] Event class
+- [ ] Make class ids optional
+- [ ] Move client methods to their respective classes (Version 2)
 
 [1]: https://developer.foursquare.com/
 [2]: https://developer.foursquare.com/docs/
@@ -325,5 +348,5 @@ Nuddles is licensed under the Do What The Fuck You Want license.
 [6]: https://developer.foursquare.com/docs/tips/tips
 [7]: https://developer.foursquare.com/docs/photos/photos
 [8]: https://developer.foursquare.com/docs/settings/settings
-[9]: https://developer.foursquare.com/docs/events/events
 [10]: https://developer.foursquare.com/docs/specials/specials
+[11]: https://developer.foursquare.com/docs/users/users
