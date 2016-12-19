@@ -2,7 +2,6 @@
 
 module.exports.Client   = require('./lib/nuddles')
 module.exports.User     = require('./lib/user')
-module.exports.Event    = require('./lib/event')
 module.exports.Special  = require('./lib/special')
 module.exports.Settings = require('./lib/settings')
 module.exports.Photo    = require('./lib/photo')
