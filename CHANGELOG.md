@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](changelog) and this project adheres to
 
 =========
 
+## 1.3.0 2016-12-19
+
+### Added
+
+- User class
+- Setting class
+- Special class
+- Photo class
+- Tip class
+- Checkin class
+
 ## 1.2.0 2016-12-10
 
 ### Added
