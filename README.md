@@ -324,7 +324,7 @@ In order to run the tests:
 
 ## Contributing
 Nuddles is a work in progress and an open source project. If you spot something that can
-be improved, or find a better way to achieve the same functionality, please feel free to
+be improved, a missing endpoint or find a better way to achieve the same functionality, please feel free to
 add your contribution by way of a pull request.
 
 ## License
