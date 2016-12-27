@@ -54,11 +54,11 @@ describe("Test Nuddles.accessToken setter", () => {
 
     it("correctly sets the access token", () => {
         assert.equal(client._accessToken, undefined)
-        assert.isTrue(client.userless)
+        assert.isFalse(client.authenticated)
         let token = "token"
         client.accessToken = token
         assert.equal(client._accessToken, token)
-        assert.isFalse(client.userless)
+        assert.isTrue(client.authenticated)
     })
 })
 
