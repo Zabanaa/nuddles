@@ -136,32 +136,3 @@ describe('Test Venue.getLists', () => {
         })
     })
 })
-
-describe('Test Venue.getSpecialDetails', () => {
-
-    it('returns details for a given special', () => {
-        let specialId = '4e0debea922e6f94b1410bb7'
-        let specialDetails = clintonBaking.getSpecialDetails(specialId)
-        return specialDetails.then( (data) => {
-            assert.equal(200, data.meta.code)
-            assert.property(data.response, 'special')
-            assert.equal(specialId, data.response.special.id)
-        })
-    })
-
-    it('returns a 404 not found when passed an invalid id', () => {
-
-        let invalidSpecialId = "somerandomid"
-        let specialDetails = clintonBaking.getSpecialDetails(invalidSpecialId)
-
-        return specialDetails.catch( (errorMsg) => {
-
-            assert.include(errorMsg, '404')
-            assert.include(errorMsg, 'No matching specials endpoint')
-
-        })
-
-    })
-
-
-})
