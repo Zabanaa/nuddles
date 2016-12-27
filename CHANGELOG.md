@@ -6,6 +6,39 @@ The format is based on [Keep a Changelog](changelog) and this project adheres to
 
 =========
 
+
+## 2.0.0 2016-12-27
+
+### Added
+
+- Class ids are no longer required upon instantiation
+- Event.getCategories
+- Event.search
+- Venue.search
+- Venue.getTrending
+- Venue.explore
+- Venue.getCategories
+
+### Removed
+
+- Venue.getSpecialDetails
+- Nuddles.getEventCategories
+- Nuddles.searchEvents
+- Nuddles.searchVenues
+- Nuddles.getTrendingVenues
+- Nuddles.exploreVenues
+- Nuddles.getVenueCategories
+- Nuddles.getTipLikes
+- Nuddles.getTipLists
+- Nuddles.getTipSaves
+- Nuddles.getCheckinLikes
+
+## 1.3.2 2016-12-2
+
+### Added
+
+- Client.userless changed to Client.authenticated to make the code easier to reason about
+
 ## 1.3.0 2016-12-19
 
 ### Added
