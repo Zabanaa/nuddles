@@ -125,7 +125,7 @@ const client = nuddles.Client({
 
 Nuddles also exposes seven other classes: `User`, `Venue`, `Checkin`, `Tip`, `Photo`, `Settings` and  `List`.
 
-All of the above classes must be instantiated with a client instance and an id (`venueId` for venue, `listId` for a list etc)
+All of the above classes accept an optional `id` upon instantiation (ex: the Id of a venue when creating a new Venue)
 
 ###Venue
 
