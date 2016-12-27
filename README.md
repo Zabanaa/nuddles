@@ -329,9 +329,6 @@ Nuddles is licensed under the Do What The Fuck You Want license.
 - [ ] User.updatePhoto()
 - [ ] User.unfriend()
 - [ ] User.approve()
-- [ ] Event class
-- [ ] Make class ids optional
-- [ ] Move client methods to their respective classes (Version 2)
 
 [1]: https://developer.foursquare.com/
 [2]: https://developer.foursquare.com/docs/
