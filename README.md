@@ -175,29 +175,20 @@ list.getFollowers()
 
 ### All Venues
 
-[Docs][3]
+[Docs][2]
 
 ```javascript
-client.searchVenues(params)
 client.suggestCompletion(params)
-client.getVenueDetail(venueId) (will be deprecated)
-client.getVenueCategories()
-client.getTrendingVenues(params)
-client.exploreVenues(params)
-client.searchSpecials(params)
-client.searchEvents(params)
-client.getEventCategories()
-client.getTipLikes()
-client.getTipLists()
-client.getTipSaves()
-client.getCheckinLikes()
-
 ```
 ### Venue
 
-[Docs][3] _look under `aspects`_
+[Docs][3]
 
 ```javascript
+venue.search()
+venue.getCategories()
+venue.getTrending()
+venue.explore()
 venue.getDetails()
 venue.getPhotos()
 venue.getEvents()
@@ -208,7 +199,6 @@ venue.getThirdPartyLinks()
 venue.getMenu()
 venue.getTips()
 venue.getLists()
-venue.getSpecialDetails(specialId)
 ```
 
 
@@ -288,6 +278,8 @@ settings.set()
 
 ```javascript
 Event.getDetails()
+Event.getCategories()
+Event.search()
 ```
 
 ### Special
@@ -297,6 +289,7 @@ Event.getDetails()
 ```javascript
 Special.getDetails()
 Special.flag()
+Special.search()
 ```
 
 ### User
@@ -348,5 +341,6 @@ Nuddles is licensed under the Do What The Fuck You Want license.
 [6]: https://developer.foursquare.com/docs/tips/tips
 [7]: https://developer.foursquare.com/docs/photos/photos
 [8]: https://developer.foursquare.com/docs/settings/settings
+[9]: https://developer.foursquare.com/docs/events/events
 [10]: https://developer.foursquare.com/docs/specials/specials
 [11]: https://developer.foursquare.com/docs/users/users
