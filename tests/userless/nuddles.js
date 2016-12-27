@@ -76,66 +76,6 @@ describe("Test Nuddles.generateOAuthTokenURL method", () => {
 
 })
 
-describe('Test Nuddles.getChekinsLikes', () => {
-
-    it('returns a list of likes for a specific checkin', () => {
-
-        let checkinId           = '502bcde16de4146b7f104ac6'
-        let getCheckinLikes     = client.getCheckinLikes(checkinId)
-
-        return getCheckinLikes.then( data => {
-            let response = data.response
-            assert.equal(200, data.meta.code)
-            assert.property(response, 'likes')
-            assert.isArray(response.likes.items)
-        })
-    })
-})
-
-describe('Test Nuddles tips methods', () => {
-
-    let tipId = '4e5b969ab61c4aaa3e183989'
-
-    it('Nuddles.getTipLikes returns a list of likes for a specific tip', () => {
-
-        let getTipLikes = client.getTipLikes(tipId)
-
-        return getTipLikes.then( data => {
-            let response = data.response
-            assert.equal(200, data.meta.code)
-            assert.property(response, 'likes')
-            assert.property(response.likes, 'count')
-        })
-
-    })
-
-    it('Nuddles.getTipSaves returns a list of saves for a specific tip', () => {
-
-        let getTipSaves = client.getTipSaves(tipId)
-
-        return getTipSaves.then( data => {
-            let response = data.response
-            assert.equal(200, data.meta.code)
-            assert.property(response, 'saves')
-            assert.property(response.saves, 'count')
-            assert.isArray(response.saves.items)
-        })
-    })
-
-    it('Nuddles.getTipLists returns a list of lists for a specific tip', () => {
-
-        let getTipLists = client.getTipLists(tipId)
-
-        return getTipLists.then( data => {
-            let response = data.response
-            assert.equal(200, data.meta.code)
-            assert.property(response, 'lists')
-            assert.property(response.lists, 'count')
-            assert.isArray(response.lists.groups)
-        })
-    })
-})
-
 describe('Test Nuddles.suggestCompletion', () => {
 
     let params      = {near: 'Paris, France', query: 'Pizz'}
@@ -171,29 +111,6 @@ describe('Test Nuddles.suggestCompletion', () => {
         return minivenues.then( (data) => {
             let response = data.response
             assert.equal(0, response.minivenues.length)
-        })
-    })
-})
-
-describe('Test Nuddles.searchSpecials', () => {
-
-    it('returns a list of specials', () => {
-        let params   = { ll: '48.8676606,2.3498557' }
-        let specials = client.searchSpecials(params)
-
-        return specials.then( (data) => {
-            let response = data.response
-            assert.equal(200, data.meta.code)
-            assert.property(response, 'specials')
-        })
-    })
-
-    it('returns a 400 bad request if no ll param is passed', () => {
-
-        let specials = client.searchSpecials()
-        return specials.catch( (errorMsg) => {
-            assert.include(errorMsg, '400')
-            assert.include(errorMsg, 'Must provide parameter ll')
         })
     })
 })
