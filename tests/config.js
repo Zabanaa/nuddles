@@ -12,7 +12,6 @@ catch(e) {
     clientId            = process.env['CLIENT_ID']
     clientSecret        = process.env['CLIENT_SECRET']
     accessToken         = process.env['ACCESS_TOKEN']
-    console.log(accessToken)
     module.exports.userlessClient = new Nuddles({ clientId, clientSecret })
     module.exports.authClient     = new Nuddles({ clientId, clientSecret })
 }
